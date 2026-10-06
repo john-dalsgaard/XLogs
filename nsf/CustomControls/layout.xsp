@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext();
+var response = exCon.getResponse();
+response.setHeader("X-UA-Compatible", "IE=edge");}]]></xp:this.afterRenderResponse>
+	<xp:this.resources>
+		<xp:styleSheet href="/custom.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:panel id="lotusFrame" styleClass="lotusFrame">
+
+		<!-- lotusBanner-->
+		<xp:panel id="lotusBanner" styleClass="lotusBanner">
+			<div class="lotusRightCorner">
+				<div class="lotusInner">
+
+					<div class="lotusLogo"></div>
+
+					<!-- Utility menu -->
+					<xp:tabbedPanel id="lotusUtility" styleClass="lotusInlinelist lotusUtility" disableTheme="true">
+						<xp:tabPanel id="tabserverName" startTabStyleClass="lotusFirst">
+							<xp:this.label><![CDATA[${javascript:"On " + @Name("[CN]",database.getServer());}]]></xp:this.label>
+							<xp:this.loaded><![CDATA[${javascript:@ClientType()=="Notes"}]]></xp:this.loaded>
+						</xp:tabPanel>
+						<xp:tabPanel id="userName" startTabStyleClass="lotusFirst" styleClass="lotusUser">
+							<xp:this.label><![CDATA[#{javascript:@Name("[CN]",session.getEffectiveUserName());}]]></xp:this.label>
+							<xp:this.loaded><![CDATA[${javascript:@ClientType()=="Web"}]]></xp:this.loaded>
+						</xp:tabPanel>
+						<xp:tabPanel label="Log in" id="login">
+							<xp:this.rendered><![CDATA[${javascript:@ClientType()=="Web" && session.getEffectiveUserName()=="Anonymous"}]]></xp:this.rendered>
+							<xp:this.href><![CDATA[?Open&login]]></xp:this.href>
+						</xp:tabPanel>
+						<xp:tabPanel label="Log out" id="logout">
+							<xp:this.rendered><![CDATA[${javascript:@ClientType()=="Web" && session.getEffectiveUserName()!="Anonymous"}]]></xp:this.rendered>
+
+							<xp:this.href><![CDATA[#{javascript:facesContext.getExternalContext().getRequest().getContextPath() + "?Logout&redirectTo=" + facesContext.getExternalContext().getRequest().getContextPath()}]]></xp:this.href>
+						</xp:tabPanel>
+					</xp:tabbedPanel>
+					<!-- END Utility menu -->
+
+
+					<!-- Global navigation -->
+					<ul class="lotusInlinelist lotusLinks" style="display:none;">
+						<li class="lotusFirst lotusSelected">
+							<xp:link escape="true" text="Home" id="link1">
+								<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+									<xp:this.action>
+										<xp:openPage name="$$HomePage"></xp:openPage>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+						</li>
+					</ul>
+					<!-- END Global navigation -->
+
+				</div>
+			</div>
+		</xp:panel>
+		<!-- END lotusBanner-->
+
+
+		<!-- Titlebar -->
+		<xp:panel id="lotusTitleBar" styleClass="lotusTitleBar">
+			<div class="lotusRightCorner">
+				<div class="lotusInner">
+					<xp:text escape="true" id="computedField2" value="#{javascript:@DbTitle()}" tagName="h2"></xp:text>
+
+					<!-- Tabs -->
+					<div class="lotusTabContainer">
+						<ul class="lotusTabs lotusTabsIndented">
+							<xp:repeat rows="10" var="tab" value="#{javascript:layout.getTabs()}" disableTheme="true" removeRepeat="true">
+								<xp:panel tagName="li">
+
+									<xp:this.styleClass><![CDATA[#{javascript:layout.isTabSelected(tab.getId()) ? "lotusSelected" : "";}]]></xp:this.styleClass>
+									<xp:link escape="true" text="#{javascript:tab.getName();}" id="link2">
+										<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+											<xp:this.action><![CDATA[#{javascript:tab.executeAction()}]]></xp:this.action>
+										</xp:eventHandler>
+									</xp:link>
+								</xp:panel>
+							</xp:repeat>
+						</ul>
+					</div>
+
+
+
+					<!-- END Tabs -->
+				</div>
+			</div>
+		</xp:panel>
+		<!-- END titleBar-->
+
+		<!--  Placebar -->
+		<xp:panel id="lotusPlaceBar" styleClass="lotusPlaceBar" loaded="false">
+			<div class="lotusRightCorner">
+				<div class="lotusInner">
+					<xp:text escape="true" id="computedField1" value="#{javascript:@Now()}" tagName="h2"></xp:text>
+				</div>
+			</div>
+		</xp:panel>
+		<!--  END Placebar -->
+
+		<xp:panel id="lotusMain" styleClass="lotusMain">
+			<xp:panel id="lotusColLeft" styleClass="lotusColLeft">
+
+				<!-- Menu -->
+
+				<xp:panel id="menu" styleClass="lotusMenu">
+					<xc:menu></xc:menu>
+					
+				</xp:panel>
+				<!-- END Menu -->
+
+			</xp:panel>
+			<xp:callback facetName="right_panel" id="right_panel"></xp:callback>
+
+			<!--  Contemt -->
+			<xp:panel id="lotusContent" styleClass="lotusContent">
+			<xc:messages></xc:messages>
+			<xp:callback facetName="facet_1" id="callback1"></xp:callback>
+			</xp:panel>
+			<!-- END Content -->
+
+		</xp:panel>
+
+		<!-- Footer -->
+		<xp:panel id="lotusFooter" styleClass="lotusFooter">
+			<!-- Place your footer here -->
+		</xp:panel>
+		<!-- END Footer -->
+
+		<!-- Legal -->
+		<xp:panel id="lotusLegal" styleClass="lotusLegal">
+			<span class="lotusLicense"></span>
+		</xp:panel>
+		<!-- END Legal -->
+	</xp:panel>
+
+</xp:view>

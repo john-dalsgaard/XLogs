@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='14.5' maintenanceversion='1.0'
+ replicaid='C1258DE80072910F'>
+<noteinfo noteid='13a' unid='C1257B8B006B3B8DC1257BFE00460311' sequence='47'>
+<created><datetime dst='true'>20131008T144443,05+02</datetime></created>
+<modified><datetime dst='true'>20260429T225122,93+02</datetime></modified>
+<revised><datetime>20251206T134658,93+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20261006T092217,44+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20260429T225122,92+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jakob Majkilde/O=MAJKILDE</name><name>CN=Sherlock2/O=EHQ</name><name
+>CN=Sherlock3/O=EHQ</name><name>CN=server/O=PHL Consult</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
+>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock/O=AMV</name><name
+>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock3/O=EHQ</name><name>CN=sherlock-demo/O=sherlock-demo</name></updatedby>
+<wassignedby><name>CN=sherlock-demo/O=sherlock-demo</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$palmVersion' sign='true'><datetime dst='true'>20131009T074608,00+02</datetime></item>
+<item name='$palmDate' sign='true'><datetime dst='true'>20131017T092356,00+02</datetime></item>
+<item name='$palmUser' sign='true'><text>CN=Jakob Majkilde/O=MAJKILDE</text></item>
+<item name='$palmSource' sign='true'><text>title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;</text></item>
+<item name='$TITLE' sign='true'><text>Main</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+TgAFACIAHgADAAcACQAEAHN1YmplY3QkQ29uZmxpY3QkUkVGBAAEAAAAHAAFAAQARm9ybQEACABE
+b2N1bWVudAoCAwAHAAoABAAJTDFT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+FAABAABEgGYAAAAHAHN1YmplY3Q=
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQABAAUACQwAAFZDAQAHAAUAAAAAAB8CBQABCwAAAAAAAAAAAAICAABAc3ViamVjdFRpdGxlJgAC
+AAAAAQEACQEAAQoBAQEKAAABAK0rBAC/AAEAAAAAAAAAAABXQwYBAQsAAAAAAAAAAAAAAAAAAAAA
+AAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAQgCAAAAAAQBfX18ABQD///8AAQAAAAAAAAAAAAAAAAAB
+AP///wABAF9fXwAAAAEA////AAEA////AAEAAAAAAAAACAAAAAAAAQA=
+</rawitemdata></item>
+<item name='$Fonts'><textlist><text>5</text><text>53</text><text>Consolas</text><text
+>6</text><text>53</text><text>Consolas</text></textlist></item>
+<item name='$comment' sign='true'><text>MVC Database</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+i/8oAAEABTVDb25zb2xhcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL0cAAAAAAEAAAAAABEAAAAA
+AAAABQEBCwgAAQB5/2wAAQAAAAAAAQAAAAAAAQD///8AAQDw8PAAAgAfAAAAAAAAAAAAAwAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAD2/zEAAAAAAAMAEwAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAYWN0aW9uQmFyQnV0dG9uP/z/
+OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+
+/3AAAAABAAAAHwEAAAgAJgAAAAAAIENyZWF0ZSAsAAAAHgACAOgDAAAAAAAAAQAIAERvY3VtZW50
+7QIDAAcADAAFAAkwUzBFACYAAAAYAAEABwBbQWRtaW5dAOcAdAIeAQMABwAMAAUACTNTNVMAvv8+
+AAAAAQAAAJ8BAAAIAAAAAAAAACBTZWFyY2ggIAAAABIAAgCQFwAAAAAAAO0BAwAHAAwABQAJMFMw
+RQA=
+</rawitemdata></item>
+<item name='$Flags'><text>Y</text></item></note>
+

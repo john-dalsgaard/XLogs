@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:layout.getCurrentFilelist();}]]></xp:this.beforePageLoad>
+	<xp:panel loaded="${javascript:viewScope.currentFile!=null;}">
+	<h1>
+		<xp:text escape="true" id="computedField2" disableTheme="true">
+			<xp:this.value><![CDATA[#{javascript:viewScope.currentFile.getFilename()}]]></xp:this.value>
+		</xp:text>
+	</h1>
+
+	<div class="lotusSection">
+		<h2>
+
+			Current file:&#160;
+			<xp:link escape="true" text="#{javascript:viewScope.currentFile.getFilename()}" id="download" styleClass="downloadLink">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:viewScope.currentFile.download();}]]></xp:this.action>
+					<xp:this.script><![CDATA[XSP.allowSubmit()]]></xp:this.script>
+				</xp:eventHandler>
+			</xp:link>
+			, &#160;
+			<xp:text escape="true" id="computedField6" value="#{javascript:dk.xpages.utils.NotesStrings.readableFileSize( viewScope.currentFile.getSize());}">
+			</xp:text>
+		</h2>
+		
+		<div class="lotusSectionBody">
+			<xc:form_reader_fileinfo>
+				<xc:this.rendered><![CDATA[#{javascript:viewScope.filelist.getCount()<=1}]]></xc:this.rendered>
+			</xc:form_reader_fileinfo>
+			<xc:form_reader_filebrowser>
+				<xc:this.rendered><![CDATA[#{javascript:viewScope.filelist.getCount()>1}]]></xc:this.rendered>
+			</xc:form_reader_filebrowser>
+			<xc:form_reader_filters></xc:form_reader_filters>
+		</div>
+	</div>
+
+	<div class="lotusSection">
+		<h2>Content</h2>
+		<div class="lotusSectionBody">
+			<div class="fileViewer">
+				<xp:text escape="false" id="fileContent" disableTheme="true">
+					<xp:this.value><![CDATA[#{javascript:file=viewScope.currentFile;
+if( file!=null){
+	file.getHtml();
+}}]]></xp:this.value>
+				</xp:text>
+			</div>
+		</div>
+	</div>
+	</xp:panel>
+</xp:view>

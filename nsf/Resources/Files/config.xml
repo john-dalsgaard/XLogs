@@ -1,0 +1,130 @@
+<config>
+	<default encoding="UTF-8"/>
+	<!-- 2022.11.23/Jda Added controls for limits -->
+	<limits>
+		<item name="MaxTextLines" id="MaxTextLines" max="10000" silence="false"/>
+		<item name="MaxLogFileDocs" id="MaxLogFileDocs" max="5000" silence="false"/>
+	</limits>
+	<menu>
+		<item name="Logs" id="logs" page="Reader.xsp">
+			<action type="link" url="Reader.xsp?tab=logs" />
+			<item name="XPages" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[data]\IBM_TECHNICAL_SUPPORT\xpages*.log</filename>
+					<filters>
+						<filter applyto="line" color="green" visible="true" name="RedirectSignal">(?i)redirectsignal</filter>
+						<filter applyto="line" color="green" visible="true" name="NoAccessSignal">(?i)noaccesssignal</filter>
+					</filters>
+				</action>
+			</item>
+			<item name="Console" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[data]\IBM_TECHNICAL_SUPPORT\console*.log</filename>
+					<filters>
+						<filter applyto="selection" color="silver" visible="false" name="tag">^\[\S*\]</filter>
+						<filter applyto="selection" color="gray" visible="true" name="datetime">[0-9]{2}-[0-9]{2}-[0-9]{4}( [0-9]{2}:[0-9]{2}:[0-9]{2}\s)</filter>
+						<filter applyto="line" bold="true" background="yellow" name="warnings">(?i)warning</filter>									
+						<filter applyto="line" color="gray" visible="true" name="noteslog">(?i)NOTESLOG</filter>
+						<filter applyto="line" color="darkred" visible="true" name="jvm">(?i)JVM</filter>
+						<filter applyto="line" color="darkblue" visible="true" name="xsp">(?i)XSP</filter>						
+					</filters>
+				</action>
+			</item>
+			<item name="System info">
+				<action type="filereader" filetype="text">
+					<filename>[data]\IBM_TECHNICAL_SUPPORT\sysinfo*.log</filename>
+				</action>
+			</item>
+
+			<item name="Domino API" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]\IBM_TECHNICAL_SUPPORT\org.openntf.*.log</filename>
+				</action>
+			</item>
+			<item name="Log.nsf" restricted="true">
+				<action type="filereader" filetype="log">
+					<filename>log.nsf</filename>
+					<viewname>($SearchEventsView)</viewname>
+					<filters>
+						<filter applyto="line" color="darkred" visible="true" name="jvm">(?i)JVM</filter>
+						<filter applyto="line" color="darkblue" visible="true" name="http">(?i)HTTP</filter>
+						<filter applyto="selection" color="gray" visible="true" name="datetime">[0-9]{2}-[0-9]{2}-[0-9]{4}( [0-9]{2}:[0-9]{2}:[0-9]{2}\s)</filter>
+					</filters>
+				</action>
+			</item>
+			<item name="Trace" restricted="true">
+				<action type="filereader" filetype="xml">
+					<filename>[data]\domino\workspace\logs\trace-log-*.xml</filename>
+					<transform>Trace_Viewer.xml</transform>
+				</action>
+			</item>
+			<item name="Error files" restricted="true">
+				<action type="filereader" filetype="xml">
+					<filename>[data]\domino\workspace\logs\error-log-*.xml</filename>
+					<transform>transform.xsl</transform>
+				</action>
+			</item>
+			<!--  2022.11.04/Jda Normally doesn't exist in Sherlock environments
+			<item name="OpenLog" >
+					<action type="nsf">
+						<filename>openlog.nsf</filename>
+						<viewname>Events\by Date</viewname>
+						<form>
+							<formula tag="h1">"Logged Event"</formula>
+							<field label="Event type">LogEventType</field>
+							<field label="Event time">LogEventTime</field>
+							<field label="Log message">LogMessage</field>
+							<field label="Stack trace">LogStackTrace</field>
+						</form>
+					</action>
+			</item>
+			 -->
+			<item name="HTTP request logging" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[data]\IBM_TECHNICAL_SUPPORT\htthr*.log</filename>
+				</action>
+			</item>
+		</item>
+		<item name="Configuration" id="config" page="Reader.xsp">
+			<action type="link" url="Reader.xsp?tab=config" />
+			<item name="notes.ini">
+				<action type="filereader" filetype="text">
+					<filename>[config]\notes.ini</filename>
+					<filters>
+						<filter applyto="line" color="blue" name="custom">^\$</filter>
+					</filters>
+				</action>
+			</item>
+			<item name="java.policy" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[program]\jvm\lib\security\java.policy</filename>
+					<filters>
+						<filter applyto="line" color="#49D164" bold="true" name="comments">\/\/</filter>
+					</filters>
+				</action>
+			</item>
+			<item name="java.pol" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[program]\jvm\lib\security\java.pol</filename>
+					<filters>
+						<filter applyto="line" color="#49D164" bold="true" name="comments">\/\/</filter>
+					</filters>
+				</action>
+			</item>
+			<item name="rcpinstall.properties" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]\domino\workspace\.config\rcpinstall.properties</filename>
+					<filters>
+						<filter applyto="line" color="#49D164" bold="true" name="comments">#</filter>
+					</filters>
+				</action>
+			</item>
+		</item>
+		<item name="Ext" id="ext" link="#">
+			<action type="link" url="Ext.xsp?tab=ext" />
+		</item>
+		<item name="About" page="About.xsp">
+			<action type="link" url="About.xsp?tab=about" />
+		</item>
+	</menu>
+</config>

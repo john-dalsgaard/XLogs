@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="filter" maintenanceversion="1.0" replicaid="C1258DE80072910F" version="14.5">
+<noteinfo noteid="132" sequence="17" unid="AD5A1CDBB4EB8F08C1257C38005A43F4">
+<created><datetime>20131205T172556,36+01</datetime></created>
+<modified><datetime dst="true">20260429T225122,85+02</datetime></modified>
+<revised><datetime>20251206T134658,84+01</datetime></revised>
+<lastaccessed><datetime dst="true">20260429T225122,84+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20260429T225122,84+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jakob Majkilde/O=MAJKILDE</name><name>CN=Sherlock2/O=EHQ</name><name>CN=Sherlock3/O=EHQ</name><name>CN=server/O=PHL Consult</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock3/O=EHQ</name><name>CN=sherlock-demo/O=sherlock-demo</name></updatedby>
+<wassignedby><name>CN=sherlock-demo/O=sherlock-demo</name></wassignedby>
+<item name="$TITLE" sign="true"><text>filterUI.js</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+
+<item name="$POID"><datetime dst="true">20230413T110426,43+02</datetime></item></note>

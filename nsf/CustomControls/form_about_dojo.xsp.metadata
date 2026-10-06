@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258DE80072910F" version="14.5">
+<noteinfo noteid="1f6" sequence="25" unid="41897A8D006ECC18C1257C1C0046869E">
+<created><datetime>20131107T135019,82+01</datetime></created>
+<modified><datetime dst="true">20260429T225124,79+02</datetime></modified>
+<revised><datetime>20251206T134701,20+01</datetime></revised>
+<lastaccessed><datetime dst="true">20260429T225124,78+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20260429T225124,78+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jakob Majkilde/O=MAJKILDE</name><name>CN=Sherlock2/O=EHQ</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Sherlock2/O=EHQ</name><name>CN=Sherlock3/O=EHQ</name><name>CN=server/O=PHL Consult</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock3/O=EHQ</name><name>CN=sherlock-demo/O=sherlock-demo</name></updatedby>
+<wassignedby><name>CN=sherlock-demo/O=sherlock-demo</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE"><text>form_about_dojo.xsp</text></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>form_about_dojo.xsp</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5</text></item>
+
+
+
+</note>
