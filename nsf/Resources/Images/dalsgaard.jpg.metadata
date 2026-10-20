@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258DE80072910F" version="14.5">
+<noteinfo noteid="306" sequence="2" unid="EAFAD8358BEC6C81C1258E96004440DE">
+<created><datetime dst="true">20261020T142530,54+02</datetime></created>
+<modified><datetime dst="true">20261020T142551,62+02</datetime></modified>
+<revised><datetime dst="true">20261020T142551,61+02</datetime></revised>
+<lastaccessed><datetime dst="true">20261020T142551,61+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20261020T142530,56+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=John Dalsgaard/O=D-D</name></updatedby>
+<wassignedby><name>CN=John Dalsgaard/O=D-D</name></wassignedby>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/jpeg</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20200618T202529,00+02</datetime></item>
+<item name="$ImageNames" sign="true"><text>jda_300x200.jpg</text></item>
+<item name="$TITLE" sign="true"><textlist><text>dalsgaard.jpg</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$DesignerBuild"><text>Build V1451FP1_06262026</text></item></note>

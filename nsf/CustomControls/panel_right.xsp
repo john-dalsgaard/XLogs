@@ -19,31 +19,23 @@
 					</div>
 				</div><!--END section-->
 
-				<!-- Section -->
+				<!-- Project maintenance -->
 				<div class="lotusSection">
 					<h2>
-						<span class="lotusLeft">Blogs</span>
+						<span class="lotusLeft">Maintainer</span>
 					</h2>
 					<div class="lotusSectionBody">
 						<div class="lotusChunk">
-							<ul>
-								<li>
-									<xp:link text="XPages.dk" value="http://xpages.dk" target="_blank">
-									</xp:link>
-								</li>
-								<li>
-									<xp:link text="LotusScript.dk" value="http://lotusscript.dk" target="_blank">
-									</xp:link>
-								</li>
-								<li>
-									<xp:link text="Majkilde.com" value="http://majkilde.com" target="_blank">
-									</xp:link>
-								</li>
-
-							</ul>
+							<xp:link escape="true" value="https://www.dalsgaard-data.dk/" target="_blank">
+								<xp:image url="/dalsgaard.jpg" id="maintainerImage" alt="John Dalsgaard" style="display:block;height:auto;width:170px;max-width:100%;margin-bottom:5px;" />
+							</xp:link>
+							<strong>John Dalsgaard</strong>, IT Specialist
+							<p>Maintainer of XLogs since version 3.</p>
+							<xp:link escape="true" text="Dalsgaard Data A/S" value="https://www.dalsgaard-data.dk/en-gb" target="_blank" />
 						</div>
 					</div>
-				</div><!--END section-->
+				</div>
+
 
 
 
