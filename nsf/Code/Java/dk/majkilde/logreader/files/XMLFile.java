@@ -2,6 +2,8 @@ package dk.majkilde.logreader.files;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.InputStream;
+import java.io.IOException;
 import java.io.Serializable;
 
 import javax.xml.transform.Transformer;
@@ -32,6 +34,9 @@ public class XMLFile extends TextFile implements Serializable {
 	}
 
 	@Override
+	public boolean isPaged() { return false; }
+
+	@Override
 	public String getHtml() {
 		if (this.file.length() == 0) {
 			return "Empty file (size=0)";
@@ -43,25 +48,35 @@ public class XMLFile extends TextFile implements Serializable {
 		}
 
 		// XSL transform
-		TransformerFactory tFactory = TransformerFactory.newInstance();
-		Transformer transformer;
-		try {
+		String stage = "load stylesheet";
+		System.out.println("XLogs XML start file=" + getFilename() + " stylesheet=" + this.xlsFilename);
+		try (InputStream stylesheet = XSPUtils.getResourceAsStream(this.xlsFilename)) {
+			if (stylesheet == null) {
+				throw new IOException("Stylesheet resource not found: " + this.xlsFilename);
+			}
+			stage = "compile stylesheet";
+			TransformerFactory tFactory = TransformerFactory.newInstance();
 			// Input XML
 			// StreamSource inputStream = new StreamSource(new BufferedReader(new FileReader(file)));
 			StreamSource inputStream = new StreamSource(this.file);
 
 			// Transformer XLS
-			transformer = tFactory.newTransformer(new StreamSource(XSPUtils.getResourceAsStream(this.xlsFilename)));
+			Transformer transformer = tFactory.newTransformer(new StreamSource(stylesheet));
 
 			// Output stream
 			ByteArrayOutputStream output = new ByteArrayOutputStream();
 			StreamResult result = new StreamResult(output);
 
 			// Do the transformation
+			stage = "transform XML";
 			transformer.transform(inputStream, result);
+			System.out.println("XLogs XML success file=" + getFilename() + " stylesheet=" + this.xlsFilename);
 
 			return output.toString(this.encoding);
 		} catch (Exception e) {
+			System.out.println("XLogs XML failed file=" + getFilename() + " stylesheet=" + this.xlsFilename
+					+ " stage=" + stage + " exception=" + e.toString());
+			e.printStackTrace(System.out);
 			this.log.error(e);
 			return super.getHtml();
 		}

@@ -64,29 +64,15 @@
 						</xsl:otherwise>
 					</xsl:choose>
 
-					<xsl:choose>
-						<xsl:when test="string(@msg)">
-							<td>
-								<xsl:value-of select="@msg" />
-								<xsl:if test="string(extendedDataElements[@name='CommonBaseEventLogRecord:multipleMessageValues'])">
-									<xsl:for-each select="extendedDataElements[@name='CommonBaseEventLogRecord:multipleMessageValues']/values">
-										<xsl:value-of select="." />
-									</xsl:for-each>
-
-								</xsl:if>
-								<xsl:if test="string(extendedDataElements[@name='CommonBaseEventLogRecord:Exception'])">
-									<i>
-										<xsl:for-each select="extendedDataElements[@name='CommonBaseEventLogRecord:Exception']/values">
-											<xsl:value-of select="." />
-										</xsl:for-each>
-									</i>
-								</xsl:if>
-							</td>
-						</xsl:when>
-						<xsl:otherwise>
-							<td>&#xA0;</td>
-						</xsl:otherwise>
-					</xsl:choose>
+					<td style="white-space:normal; overflow-wrap:anywhere; word-wrap:break-word;">
+						<xsl:value-of select="@msg" />
+						<xsl:for-each select="extendedDataElements[@name='CommonBaseEventLogRecord:multipleMessageValues']//values">
+							<div style="white-space:pre-wrap;"><xsl:value-of select="." /></div>
+						</xsl:for-each>
+						<xsl:for-each select="extendedDataElements[@name='CommonBaseEventLogRecord:Exception']//values">
+							<pre class="trace-exception" style="white-space:pre-wrap; overflow-wrap:anywhere; word-wrap:break-word;"><xsl:value-of select="." /></pre>
+						</xsl:for-each>
+					</td>
 
 					<xsl:choose>
 						<xsl:when test="string(extendedDataElements[@name='CommonBaseEventLogRecord:sourceClassName']/values)">

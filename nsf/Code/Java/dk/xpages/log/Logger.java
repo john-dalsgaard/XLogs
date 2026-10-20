@@ -82,7 +82,7 @@ public class Logger implements Serializable {
 	}
 
 	public void error(Throwable t) {
-		log(Level.SEVERE, messageFormat("{0}", t.getMessage()), null);
+		log(Level.SEVERE, t.toString(), t);
 	}
 
 	private static StackTraceElement getStackTraceElement(final int depth) {

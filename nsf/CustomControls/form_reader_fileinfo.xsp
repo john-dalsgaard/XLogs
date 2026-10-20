@@ -15,7 +15,7 @@
 				<tr>
 					<th>Path:</th>
 					<td>
-						<xp:text escape="true" id="computedField5" value="#{javascript:viewScope.filelist.getPath()}"></xp:text>
+						<xp:text escape="true" id="computedField5" value="#{javascript:viewScope.currentFile.getPath()}"></xp:text>
 					</td>
 				</tr>
 			</table>

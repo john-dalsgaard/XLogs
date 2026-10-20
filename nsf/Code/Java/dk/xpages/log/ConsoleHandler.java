@@ -31,6 +31,9 @@ public class ConsoleHandler {
 
 		System.out.println(NotesStrings.messageFormat("NOTESLOG {0}: ({1}) {2} [{3}.{4}]", record.getLevel(), getPagename(), record.getMessage(), record.getSourceClassName(), record.getSourceMethodName()));
 
+		if (record.getThrown() != null) {
+			record.getThrown().printStackTrace(System.out);
+		}
 	}
 
 	private boolean isLoggable(LogRecord record) {

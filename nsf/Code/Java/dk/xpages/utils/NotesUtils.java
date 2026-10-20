@@ -14,33 +14,30 @@ public class NotesUtils {
 
 	private static Logger log = LogManager.getLogger();
 
-	@SuppressWarnings("unchecked")
-	public static List evaluate(String formula, Document doc) {
+	public static List<Object> evaluate(String formula, Document doc) {
 		Session session = XSPUtils.getCurrentSession();
 
 		if (NotesStrings.isBlank(formula)) {
-			return new ArrayList<String>();
+			return new ArrayList<Object>();
 		}
 
 		try {
-			Vector vector = session.evaluate(formula, doc);
-			return new ArrayList(vector);
+			Vector<?> vector = session.evaluate(formula, doc);
+			return new ArrayList<Object>(vector);
 		} catch (NotesException e) {
 			log.error(e);
-			ArrayList<String> result = new ArrayList<String>();
+			List<Object> result = new ArrayList<Object>();
 			result.add(e.getMessage());
 			return result;
 		}
 	}
 
-	@SuppressWarnings("unchecked")
-	public static List evaluate(String formula) {
+	public static List<Object> evaluate(String formula) {
 		return evaluate(formula, null);
 	}
 
-	@SuppressWarnings("unchecked")
 	public static String evaluateString(String formula, Document doc) {
-		List result = evaluate(formula, doc);
+		List<Object> result = evaluate(formula, doc);
 		return NotesStrings.join(";", result);
 	}
 

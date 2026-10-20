@@ -28,6 +28,11 @@ public class LayoutBean implements Serializable {
 				XSPUtils.addFatal("File nor found: config.xml");
 			} else {
 				XML configXML = new XML(input, "config");
+				// 2022.11.23/Jda Added controls for limits
+				if (configXML.hasChild("limits")) {
+					dk.xpages.utils.XSPUtils.debug("Layoutbeen: Has limits config");
+					SystemConstants.loadLimits(configXML.child("limits"));
+				}
 				if (configXML.hasChild("menu")) {
 					dk.xpages.utils.XSPUtils.debug("Layoutbeen: Has menu config");
 					menu = MenuItem.createFromXML(configXML.child("menu"));
@@ -35,11 +40,7 @@ public class LayoutBean implements Serializable {
 				} else {
 					XSPUtils.addFatal("config.xml: No <menu>");
 				}
-				// 2022.11.23/Jda Added controls for limits
-				if (configXML.hasChild("limits")) {
-					dk.xpages.utils.XSPUtils.debug("Layoutbeen: Has limits config");
-					SystemConstants.loadLimits(configXML.child("limits"));
-				}
+
 
 			}
 		} catch (Exception e) {

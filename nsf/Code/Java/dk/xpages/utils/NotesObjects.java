@@ -82,6 +82,10 @@ public class NotesObjects extends DominoUtils {
 	public static Database getDatabaseAsSigner(String reference) {
 		dk.xpages.utils.XSPUtils.debug("NotesObjects: getDatabaseAsSigner...");
 		Session session = getSessionAsSigner();
+		if (session == null) {
+			throw new IllegalStateException("Cannot open database '" + reference
+					+ "': XPages signer full-admin session is unavailable");
+		}
 		return getDatabase(session, reference);
 	}
 

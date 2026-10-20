@@ -17,6 +17,8 @@ public class Directory implements Serializable {
 	public static final String NOTES_PROGRAM = "[program]";
 	public static final String NOTES_DATA = "[data]";
 	public static final String NOTES_CONFIG = "[config]";
+	public static final String JAVA_HOME = "[java]";
+	public static final String USER_HOME = "[user]";
 
 	public static List<String> getFileNames(final String filePattern) {
 		return toFilenames(getFiles(filePattern));
@@ -32,6 +34,8 @@ public class Directory implements Serializable {
 
 	public static String getCleanPattern(final String filePattern) {
 		String pattern = filePattern;
+		pattern = expandProperty(pattern, JAVA_HOME, "java.home");
+		pattern = expandProperty(pattern, USER_HOME, "user.home");
 
 		if (NotesStrings.startsWithIgnoreCase(pattern, NOTES_PROGRAM)) {
 			pattern = NotesEnvironment.getProgramFolder() + pattern.substring(NOTES_PROGRAM.length() + 1);
@@ -45,6 +49,21 @@ public class Directory implements Serializable {
 		pattern = NotesStrings.replace(pattern, "\\", File.separator);
 		pattern = NotesStrings.replace(pattern, "/", File.separator);
 
+		return pattern;
+	}
+
+	private static String expandProperty(String pattern, String token, String property) {
+		if (NotesStrings.startsWithIgnoreCase(pattern, token)) {
+			String home;
+			try {
+				home = java.lang.System.getProperty(property);
+			} catch (SecurityException e) {
+				return pattern;
+			}
+			if (!NotesStrings.isBlank(home)) {
+				return home + File.separator + pattern.substring(token.length() + 1);
+			}
+		}
 		return pattern;
 	}
 

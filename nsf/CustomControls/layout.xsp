@@ -43,7 +43,7 @@ response.setHeader("X-UA-Compatible", "IE=edge");}]]></xp:this.afterRenderRespon
 					<ul class="lotusInlinelist lotusLinks" style="display:none;">
 						<li class="lotusFirst lotusSelected">
 							<xp:link escape="true" text="Home" id="link1">
-								<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+								<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
 									<xp:this.action>
 										<xp:openPage name="$$HomePage"></xp:openPage>
 									</xp:this.action>
@@ -73,7 +73,7 @@ response.setHeader("X-UA-Compatible", "IE=edge");}]]></xp:this.afterRenderRespon
 
 									<xp:this.styleClass><![CDATA[#{javascript:layout.isTabSelected(tab.getId()) ? "lotusSelected" : "";}]]></xp:this.styleClass>
 									<xp:link escape="true" text="#{javascript:tab.getName();}" id="link2">
-										<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+										<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
 											<xp:this.action><![CDATA[#{javascript:tab.executeAction()}]]></xp:this.action>
 										</xp:eventHandler>
 									</xp:link>

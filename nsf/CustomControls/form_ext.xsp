@@ -5,12 +5,14 @@
 		<xp:script src="/tablesorter/jquery.tablesorter.min.js" clientSide="true"></xp:script>
 		<xp:styleSheet href="/tablesorter/style.css"></xp:styleSheet>
 	</xp:this.resources>
-	<h1>Ext folder content</h1>
+	<h1>Java extension libraries</h1>
+	<p>JAR files from ndext and JVM lib/ext folders.</p>
 	<div class="viewer">
 		<table id="extFiles" class="tablesorter">
 			<thead>
 				<tr>
 					<th>Filename</th>
+					<th>Folder</th>
 					<th>Size</th>
 					<th>Date</th>
 				</tr>
@@ -26,6 +28,7 @@
 								</xp:eventHandler>
 							</xp:link>
 						</td>
+						<td><xp:text escape="true" value="#{javascript:file.getParent()}" /></td>
 						<td>
 							<xp:text escape="true" value="#{javascript:dk.xpages.utils.NotesStrings.readableFileSize(file.length());}">
 								<xp:this.converter>

@@ -31,12 +31,28 @@
 								<xp:convertDateTime type="both" dateStyle="short" timeStyle="short"></xp:convertDateTime>
 							</xp:this.converter>
 						</xp:text>
-						<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:text escape="true" value="#{javascript:' '+file.getPath()}" rendered="#{javascript:viewScope.filelist.getPattern().indexOf(' | ') >= 0}" />
+						<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
 							<xp:this.action><![CDATA[#{javascript:viewScope.filelist.setCurrent( file );}]]></xp:this.action>
+						</xp:eventHandler>
+						<xp:eventHandler event="onmouseleave" submit="false">
+							<xp:this.script><![CDATA[var popup = dijit.byId('#{id:fileTooltip}');
+if (popup) popup.close();]]></xp:this.script>
+						</xp:eventHandler>
+						<xp:eventHandler event="onblur" submit="false">
+							<xp:this.script><![CDATA[var popup = dijit.byId('#{id:fileTooltip}');
+if (popup) popup.close();]]></xp:this.script>
 						</xp:eventHandler>
 					</xp:link>
 
-					<div dojoType="dijit.Tooltip" connectId="#{id:tip}" position="below" showDelay="0" style="display:none;">
+					<xp:panel id="fileTooltip" tagName="div" style="display:none;">
+						<xp:this.attrs>
+							<xp:attr name="dojoType" value="dijit.Tooltip" />
+							<xp:attr name="connectId" value="#{id:tip}" />
+							<xp:attr name="position" value="below" />
+							<xp:attr name="showDelay" value="0" />
+							<xp:attr name="hideDelay" value="0" />
+						</xp:this.attrs>
 						<table class="tip">
 							<tr>
 								<th>Filename:</th>
@@ -51,7 +67,7 @@
 								</td>
 							</tr>
 						</table>
-					</div>
+					</xp:panel>
 				</li>
 			</xp:repeat>
 		</ul>

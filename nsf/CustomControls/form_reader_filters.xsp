@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<xp:this.resources>
-		<xp:script src="/jquery-2.0.3.min.js" clientSide="true"></xp:script>
-		<xp:script src="/filterUI.js" clientSide="true"></xp:script>
+		<xp:script src="/filterUI.js" clientSide="true" />
 	</xp:this.resources>
 	<xp:panel rendered="#{javascript:viewScope.currentFile.getFilters().hasFilters()}">
-		Filters:
-		<xp:repeat rows="30" value="#{javascript:viewScope.currentFile.getFilters().getFilterList()}" var="filter" removeRepeat="true"
-			disableTheme="true"
-		>
-
-			<xp:checkBox id="checkBox1" defaultChecked="#{javascript:filter.visible;}" text="#{javascript:filter.getName();}">
-				<xp:eventHandler event="onclick" submit="false">
-					<xp:this.script><![CDATA[toogleDisplay('.#{javascript:filter.getClassName()}' );]]></xp:this.script>
-				</xp:eventHandler>
-			</xp:checkBox>
-
-		</xp:repeat>
-		<xp:checkBox id="checkBox2" text="other" defaultChecked="true">
-			<xp:eventHandler event="onclick" submit="false">
-				<xp:this.script><![CDATA[toogleDisplay('.default-filter' );]]></xp:this.script>
-			</xp:eventHandler>
-		</xp:checkBox>
+		<xp:panel tagName="div" styleClass="xlogs-filters">
+			<xp:this.attrs>
+				<xp:attr name="data-category" value="#{javascript:viewScope.currentMenu.getId()}" />
+			</xp:this.attrs>
+			Filters:
+			<xp:repeat rows="30" value="#{javascript:viewScope.currentFile.getFilters().getFilterList()}" var="filter" removeRepeat="true" disableTheme="true">
+				<xp:panel tagName="label">
+					<xp:this.attrs>
+						<xp:attr name="data-selector" value="#{javascript:'.'+filter.getClassName()}" />
+						<xp:attr name="data-default" value="#{javascript:filter.getVisible() ? 'true' : 'false'}" />
+					</xp:this.attrs>
+					<xp:checkBox id="filterToggle" defaultChecked="#{javascript:filter.getVisible()}" />
+					<xp:text value="#{javascript:filter.getName()}" />
+				</xp:panel>
+			</xp:repeat>
+			<xp:panel tagName="label">
+				<xp:this.attrs>
+					<xp:attr name="data-selector" value=".default-filter" />
+					<xp:attr name="data-default" value="true" />
+				</xp:this.attrs>
+				<xp:checkBox id="otherToggle" defaultChecked="true" /> other
+			</xp:panel>
+		</xp:panel>
 	</xp:panel>
 </xp:view>

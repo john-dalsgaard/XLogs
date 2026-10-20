@@ -30,6 +30,8 @@ public class SystemConstants {
 					maxTextLines = setLimitCount(itemXML);
 					maxTextLinesSilenced = setLimitSilenced(itemXML);
 				} else if (NotesStrings.equalsIgnoreCase(itemXML.string("id"), "MaxLogFileDocs")) {
+					maxLogFileDocs = setLimitCount(itemXML);
+					maxLogFileDocsSilenced = setLimitSilenced(itemXML);
 				}
 			}
 		}

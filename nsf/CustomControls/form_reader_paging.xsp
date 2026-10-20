@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:panel styleClass="logPaging">
+		<xp:text id="pageStatus" value="#{javascript:viewScope.currentFile.getPageStatus()}" />
+		<xp:button id="olderLines" value="Older" disabled="#{javascript:!viewScope.currentFile.isHasOlder()}">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true"><xp:this.action><![CDATA[#{javascript:viewScope.currentFile.older()}]]></xp:this.action></xp:eventHandler>
+		</xp:button>
+		<xp:button id="newerLines" value="Newer" disabled="#{javascript:!viewScope.currentFile.isHasNewer()}">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true"><xp:this.action><![CDATA[#{javascript:viewScope.currentFile.newer()}]]></xp:this.action></xp:eventHandler>
+		</xp:button>
+		<xp:button id="latestLines" value="Latest">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true"><xp:this.action><![CDATA[#{javascript:viewScope.currentFile.latest()}]]></xp:this.action></xp:eventHandler>
+		</xp:button>
+	</xp:panel>
+</xp:view>
