@@ -1,0 +1,314 @@
+/* OneUI 2.1 bug fix */
+.lotusSection h2 {
+	margin: 0px;
+}
+
+.lotusTitleBar {
+	border-bottom:0px;
+}
+
+.lotusMain {
+	border-top:0px;
+}
+
+.lotusTitleBar h2 {
+	margin: 0px;
+	font-weight: bold;
+}
+
+.lotusPlaceBar h2 {
+	margin: 0px;
+}
+
+/* Form layout */
+.lotusContent h1 {
+	margin-bottom: 20px;
+	text-transform:none;
+}
+
+
+.fileViewer{
+	font-family:Consolas,"Courier New";
+	overflow:auto;
+	white-space:pre-wrap;
+}
+
+.tip th {
+	text-align: left;
+}
+
+.fileSelectorSummary {
+	color:#666;
+}
+
+.fileSelector {
+	margin:4px 0 8px;
+}
+
+.fileSelector ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.fileSelector li {
+	display:block;
+	margin:0;
+	padding:0;
+}
+
+.fileSelector li a {
+	display:block;
+	padding:3px 6px;
+	overflow-wrap:break-word;
+}
+
+.fileSelectorDate {
+	display:inline-block;
+	min-width:145px;
+	margin-right:12px;
+	color:#666;
+}
+
+.fileSelectorName {
+	overflow-wrap:anywhere;
+}
+
+.fileSelector .current {
+	background:#f0f3f5;
+	color:#333;
+	font-weight:bold;
+	border-left:3px solid #708090;
+	padding-left:3px;
+}
+
+/* list on about page */
+.pipelist ul {
+	list-style-type: none;
+	margin: 0 0 0 10px;
+	padding: 0;
+	display: inline;
+}
+
+.pipelist li {
+	display: inline;
+}
+
+
+.pipelist li + li:before{
+    content: " | ";
+    padding: 0 5px;
+	margin-top:4px;
+	margin-left:5px;
+}
+
+/* table on the about page */
+.lotusTable th {
+	background-color: gray;
+	color: white;
+	font-weight: bold;
+}
+
+.lotusTable th a, .lotusTable th a:hover  {
+	color: white;
+	}
+
+.lotusTable td,.lotusTable th {
+	padding: 2px 5px 2px 5px;
+}
+
+.lotusTable {
+	margin-bottom: 20px;
+}
+
+.simpleTable td {
+	padding:0 5px 0 0 ;
+	margin:0;
+	border:0;
+}
+
+/* Junit */
+#junit h2 {
+	margin: 0 0 20px 0;
+}
+
+/* Download link */
+
+.downloadLink{
+	color:red;
+	background-image: url('download.png');
+background-position: center right;
+background-repeat: no-repeat;
+padding-right:13px;
+}
+
+/* Error messages */
+.messages .xspMessage {
+	margin:4px;
+	padding:3px;
+}
+
+/* XLogs identity, shared by the reader, configuration and About pages. */
+.xlogsApp.lotusFrame {
+    background:#eef2f7;
+    color:#192b46;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+.xlogsApp .lotusBanner,
+.xlogsApp .lotusBanner .lotusRightCorner,
+.xlogsApp .lotusBanner .lotusInner {
+    background:#012e76;
+    background-image:none;
+    border:0;
+}
+.xlogsApp .lotusBanner .lotusInner { height:36px; min-height:0; padding:0 18px 0 100px; display:flex; align-items:center; justify-content:space-between; }
+.xlogsApp .xlogsBrand { float:none; display:flex; align-items:center; padding:0; white-space:nowrap; }
+.xlogsApp .xlogsHeader { position:relative; background:#012e76; }
+.xlogsApp .xlogsBrandIcon { position:absolute; left:12px; padding-top:4px; width:64px; height:64px; object-fit:contain; margin:0; z-index:1; }
+.xlogsApp .xlogsBannerTitle, .xlogsApp .xlogsBrandTitle { display:block; color:#fff; font-size:22px; line-height:28px; font-weight:600; letter-spacing:-0.4px; }
+.xlogsApp .lotusBanner .lotusUtility { margin:0 0 0 auto; float:none; padding:0; }
+.xlogsApp .lotusBanner .lotusUtility a,
+.xlogsApp .lotusBanner .lotusUtility li { color:#d7e4fa; }
+.xlogsApp .lotusTitleBar,
+.xlogsApp .lotusTitleBar .lotusRightCorner,
+.xlogsApp .lotusTitleBar .lotusInner {
+    background:#012e76;
+    background-image:none;
+    border:0;
+}
+.xlogsApp .lotusTitleBar .lotusInner { padding:0 18px 0 100px; }
+
+.xlogsApp .lotusTitleBar .lotusTabs { margin:0; padding:0; }
+.xlogsApp .lotusTitleBar .lotusTabs li {
+    background:#17498b;
+    background-image:none;
+    border:0;
+    margin:0 4px 0 0;
+    padding:0;
+}
+.xlogsApp .lotusTitleBar .lotusTabs li a {
+    background:transparent;
+    border:0;
+    border-bottom:3px solid transparent;
+    color:#e2edff;
+    padding:7px 16px;
+    font-weight:600;
+    text-decoration:none;
+}
+.xlogsApp .lotusTitleBar .lotusTabs li a:hover { color:#fff; background:#17498b; }
+.xlogsApp .lotusTitleBar .lotusTabs li.lotusSelected a {
+    background:#eef2f7;
+    color:#012e76;
+    border-bottom-color:#5f9eff;
+    border-radius:6px 6px 0 0;
+}
+.xlogsApp .lotusMain { background:#eef2f7; border:0; padding-top:8px; }
+.xlogsApp .lotusColLeft { width:200px; padding-top:0; }
+.xlogsApp .lotusContent { background:transparent; margin-left:222px; padding-top:0; }
+.xlogsApp .lotusMenu,
+.xlogsApp .lotusMenu .lotusBottomCorner,
+.xlogsApp .lotusMenu .lotusInner {
+    background:transparent;
+    background-image:none;
+    border:0;
+}
+.xlogsApp .lotusMenu li { margin:3px 0; border:0; }
+.xlogsApp .lotusMenu li a { padding:9px 12px; color:#3b4e68; border-radius:5px; }
+.xlogsApp .lotusMenu li a:hover { background:#e0e8f4; color:#012e76; }
+.xlogsApp .lotusMenu li.lotusSelected,
+.xlogsApp .lotusMenu li.lotusSelected a {
+    background:#17498b;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+}
+.xlogsApp .lotusContent h1 {
+    color:#012e76;
+    font-size:22px;
+    font-weight:600;
+    text-transform:none;
+    margin-top:0;
+    margin-bottom:12px;
+    overflow-wrap:anywhere;
+}
+.xlogsApp .lotusSection {
+    background:#fff;
+    border:1px solid #d8e1ee;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(8,26,59,0.04);
+    margin-bottom:18px;
+}
+.xlogsApp .lotusSection h2 {
+    background:#f7f9fd;
+    background-image:none;
+    border-bottom:1px solid #e1e8f2;
+    border-radius:8px 8px 0 0;
+    color:#233d63;
+    padding:10px 14px;
+    overflow-wrap:anywhere;
+}
+.xlogsApp .lotusSection .lotusSectionBody { padding:12px 14px; }
+.xlogsApp a { color:#245fbe; }
+.xlogsApp a:focus-visible { outline:2px solid #3876e8; outline-offset:2px; }
+.xlogsApp .fileSelector .current { background:#eaf1fd; border-left-color:#3876e8; color:#012e76; }
+.xlogsApp .fileViewer {
+    background:#fff;
+    color:#202b3b;
+    font-family:Consolas,"Liberation Mono","Courier New",monospace;
+    font-size:12px;
+    line-height:1.55;
+    padding:10px 0;
+}
+.xlogsApp input[type="checkbox"] { accent-color:#3876e8; }
+.xlogsApp .lotusFooter, .xlogsApp .lotusLegal { background:transparent; border:0; }
+@media (max-width:700px) {
+    .xlogsApp .lotusBanner .lotusInner, .xlogsApp .lotusTitleBar .lotusInner { padding-left:88px; padding-right:12px; }
+    .xlogsApp .xlogsBrandTitle { font-size:18px; }
+    .xlogsApp .lotusBanner .lotusUtility { font-size:11px; }
+    .xlogsApp .lotusColLeft { float:none; width:auto; margin-bottom:16px; }
+    .xlogsApp .lotusContent { margin-left:0; }
+    .xlogsApp .lotusTitleBar .lotusTabs li a { padding:7px 10px; }
+}
+
+/* Reset the fixed OneUI header geometry and image-based corner decorations. */
+.xlogsApp .lotusBanner { height:auto; min-height:0; padding:0; }
+.xlogsApp .lotusBanner .lotusRightCorner { padding:0; }
+.xlogsApp .lotusTitleBar { height:auto; min-height:0; padding:0; }
+.xlogsApp .lotusTitleBar .lotusRightCorner { padding:0; }
+.xlogsApp .lotusTitleBar .lotusInner { height:auto; min-height:0; overflow:hidden; }
+.xlogsApp .lotusTitleBar .lotusTabContainer { clear:both; margin:0; padding:0; }
+.xlogsApp .lotusTitleBar .lotusTabs { float:left; position:static; }
+.xlogsApp .lotusTitleBar .lotusTabs li { border-radius:5px 5px 0 0; }
+.xlogsApp .lotusTitleBar .lotusTabs li a { display:block; line-height:18px; }
+.xlogsApp .lotusMenu li, .xlogsApp .lotusMenu li a { background-image:none; }
+
+/* Keep the active navigation readable through OneUI link/visited states. */
+.xlogsApp .lotusMenu { margin-top:0; padding-top:0; }
+.xlogsApp .lotusMenu .lotusInner { padding-top:0; }
+.xlogsApp .lotusMenu li.lotusSelected a,
+.xlogsApp .lotusMenu li.lotusSelected a:link,
+.xlogsApp .lotusMenu li.lotusSelected a:visited,
+.xlogsApp .lotusMenu li.lotusSelected a:hover,
+.xlogsApp .lotusMenu li.lotusSelected a:focus,
+.xlogsApp .lotusMenu li.lotusSelected a span {
+    background-color:#17498b;
+    color:#fff !important;
+}
+
+/* Keep page size, snapshot status and navigation together. */
+.xlogsApp .logPagingToolbar {
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px 10px;
+    margin-bottom:8px;
+}
+.xlogsApp .logPagingToolbar label { margin:0; }
+.xlogsApp .logPaging {
+    display:inline-flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px 12px;
+}
+.xlogsApp .logPagingLinks { display:inline-flex; gap:12px; }
+.xlogsApp .logPagingLinks a { color:#245fbe; text-decoration:none; }
+.xlogsApp .logPagingLinks a:hover { text-decoration:underline; }

@@ -5,18 +5,17 @@
 		<xp:dojoModule name="dijit.Tooltip"></xp:dojoModule>
 	</xp:this.resources>
 
-	<xp:text escape="true"  value="#{javascript:viewScope.filelist.getCount()}">
-		<xp:this.converter>
-			<xp:convertNumber type="number" integerOnly="true"></xp:convertNumber>
-		</xp:this.converter>
-	</xp:text>
-	&#160; files matches
-	<i>
-		"
-		<xp:text escape="true"  value="#{javascript:viewScope.filelist.getPattern()}"></xp:text>
-		"
-	</i>
-	:
+	<xp:panel tagName="div" styleClass="fileSelectorSummary">
+		<xp:this.attrs>
+			<xp:attr name="title" value="#{javascript:viewScope.filelist.getPattern()}" />
+		</xp:this.attrs>
+		<xp:text escape="true" value="#{javascript:viewScope.filelist.getCount()}">
+			<xp:this.converter>
+				<xp:convertNumber type="number" integerOnly="true" />
+			</xp:this.converter>
+		</xp:text>
+		&#160;files
+	</xp:panel>
 
 	<div class="fileSelector">
 		<xp:pager partialRefresh="true" id="filesPager" for="files" layout="Previous Next"></xp:pager>
@@ -26,12 +25,12 @@
 				<li>
 					<xp:link escape="true" id="tip">
 						<xp:this.styleClass><![CDATA[#{javascript:if( viewScope.currentFile==file) {"current"}}]]></xp:this.styleClass>
-						<xp:text escape="true" id="computedField3" value="#{javascript:file.getDate();}">
+						<xp:text escape="true" id="computedField3" styleClass="fileSelectorDate" value="#{javascript:file.getDate();}">
 							<xp:this.converter>
 								<xp:convertDateTime type="both" dateStyle="short" timeStyle="short"></xp:convertDateTime>
 							</xp:this.converter>
 						</xp:text>
-						<xp:text escape="true" value="#{javascript:' '+file.getPath()}" rendered="#{javascript:viewScope.filelist.getPattern().indexOf(' | ') >= 0}" />
+						<xp:text escape="true" styleClass="fileSelectorName" value="#{javascript:file.getFilename()}" />
 						<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
 							<xp:this.action><![CDATA[#{javascript:viewScope.filelist.setCurrent( file );}]]></xp:this.action>
 						</xp:eventHandler>
@@ -59,6 +58,10 @@ if (popup) popup.close();]]></xp:this.script>
 								<td>
 									<xp:text escape="true" id="computedField7" value="#{javascript:file.getFilename();}"></xp:text>
 								</td>
+							</tr>
+							<tr>
+								<th>Path:</th>
+								<td><xp:text escape="true" value="#{javascript:file.getPath()}" /></td>
 							</tr>
 							<tr>
 								<th>Size: </th>

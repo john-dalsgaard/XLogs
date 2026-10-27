@@ -15,10 +15,19 @@
 			<tr>
 				<td>Installed versions</td>
 				<td>
-					<xp:repeat id="repeat1" rows="30" value="#{javascript:com.ibm.xsp.context.DojoLibraryFactory.getDojoLibraries()}"
-						var="dojo"
+					<xp:repeat id="repeat1" rows="30"
+						var="dojoVersion"
 					>
-						<xp:text escape="true" value="#{javascript:dojo.getVersion()}"></xp:text>
+						<xp:this.value><![CDATA[#{javascript:
+var libraries = com.ibm.xsp.context.DojoLibraryFactory.getDojoLibraries();
+if (libraries instanceof java.util.Collection) libraries = libraries.toArray();
+var versions = new java.util.LinkedHashSet();
+for (var i = 0; i < libraries.length; i++) {
+    versions.add(java.lang.String.valueOf(libraries[i].getVersion()));
+}
+return new java.util.ArrayList(versions);
+}]]></xp:this.value>
+						<xp:text escape="true" value="#{dojoVersion}"></xp:text>
 						<br />
 					</xp:repeat>
 				</td>

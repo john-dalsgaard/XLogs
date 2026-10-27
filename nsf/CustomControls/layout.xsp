@@ -4,17 +4,18 @@
 	<xp:this.afterRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext();
 var response = exCon.getResponse();
 response.setHeader("X-UA-Compatible", "IE=edge");}]]></xp:this.afterRenderResponse>
-	<xp:this.resources>
-		<xp:styleSheet href="/custom.css"></xp:styleSheet>
-	</xp:this.resources>
-	<xp:panel id="lotusFrame" styleClass="lotusFrame">
+	<xp:panel id="lotusFrame" styleClass="lotusFrame xlogsApp">
 
+		<div class="xlogsHeader">
+			<xp:image url="/xlogs-icon.png" alt="" styleClass="xlogsBrandIcon" />
 		<!-- lotusBanner-->
 		<xp:panel id="lotusBanner" styleClass="lotusBanner">
 			<div class="lotusRightCorner">
 				<div class="lotusInner">
 
-					<div class="lotusLogo"></div>
+					<div class="xlogsBrand">
+						<span class="xlogsBrandTitle">XLogs file reader</span>
+					</div>
 
 					<!-- Utility menu -->
 					<xp:tabbedPanel id="lotusUtility" styleClass="lotusInlinelist lotusUtility" disableTheme="true">
@@ -63,7 +64,7 @@ response.setHeader("X-UA-Compatible", "IE=edge");}]]></xp:this.afterRenderRespon
 		<xp:panel id="lotusTitleBar" styleClass="lotusTitleBar">
 			<div class="lotusRightCorner">
 				<div class="lotusInner">
-					<xp:text escape="true" id="computedField2" value="#{javascript:@DbTitle()}" tagName="h2"></xp:text>
+
 
 					<!-- Tabs -->
 					<div class="lotusTabContainer">
@@ -89,6 +90,7 @@ response.setHeader("X-UA-Compatible", "IE=edge");}]]></xp:this.afterRenderRespon
 			</div>
 		</xp:panel>
 		<!-- END titleBar-->
+		</div>
 
 		<!--  Placebar -->
 		<xp:panel id="lotusPlaceBar" styleClass="lotusPlaceBar" loaded="false">

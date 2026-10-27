@@ -40,22 +40,22 @@ requestScope.xlogsContent = current == null ? "" : current.getHtml();
 
 	<div class="lotusSection">
 		<h2>Content</h2>
-		<div class="lotusSectionBody">
-			<xp:panel rendered="#{javascript:viewScope.currentFile.getClass().getName()=='dk.majkilde.logreader.files.TextFile'}">
-				Lines per page:
+		<xp:panel id="contentBody" styleClass="lotusSectionBody">
+			<xp:panel styleClass="logPagingToolbar" rendered="#{javascript:viewScope.currentFile.getClass().getName()=='dk.majkilde.logreader.files.TextFile' &amp;&amp; viewScope.currentFile.isPaged()}">
+				<xp:label for="pageSize" value="Lines per page:" />
 				<xp:comboBox id="pageSize" value="#{viewScope.currentFile.pageSizeSelection}">
 					<xp:selectItems value="#{viewScope.currentFile.pageSizeOptions}" />
-					<xp:eventHandler event="onchange" submit="true" refreshMode="complete" />
+					<xp:eventHandler event="onchange" submit="true" refreshMode="partial" refreshId="contentBody" />
 				</xp:comboBox>
 				<xc:form_reader_paging id="topPaging" />
 			</xp:panel>
 			<div class="fileViewer">
 				<xp:text escape="false" id="fileContent" disableTheme="true" value="#{requestScope.xlogsContent}" />
 			</div>
-			<xp:panel rendered="#{javascript:viewScope.currentFile.getClass().getName()=='dk.majkilde.logreader.files.TextFile' &amp;&amp; viewScope.currentFile.isShowBottomPaging()}">
+			<xp:panel rendered="#{javascript:viewScope.currentFile.getClass().getName()=='dk.majkilde.logreader.files.TextFile' &amp;&amp; viewScope.currentFile.isPaged() &amp;&amp; viewScope.currentFile.isShowBottomPaging()}">
 				<xc:form_reader_paging id="bottomPaging" />
 			</xp:panel>
-		</div>
+		</xp:panel>
 	</div>
 	</xp:panel>
 </xp:view>

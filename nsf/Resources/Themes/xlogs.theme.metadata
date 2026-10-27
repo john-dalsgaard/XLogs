@@ -7,10 +7,10 @@
 <addedtofile><datetime dst="true">20260429T225123,44+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Jakob Majkilde/O=MAJKILDE</name><name>CN=Sherlock2/O=EHQ</name><name>CN=Sherlock3/O=EHQ</name><name>CN=server/O=PHL Consult</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock3/O=EHQ</name><name>CN=sherlock-demo/O=sherlock-demo</name></updatedby>
 <wassignedby><name>CN=sherlock-demo/O=sherlock-demo</name></wassignedby>
-<item name="$TITLE"><text>Majkilde.theme</text></item>
+<item name="$TITLE"><text>xlogs.theme</text></item>
 <item name="$Flags"><text>34567Cg~`</text></item>
 <item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>Majkilde.theme</text></item>
-<item name="$CSSFiles" sign="true"><text>Majkilde.css</text></item></note>
+<item name="$FileNames" sign="true"><text>xlogs.theme</text></item>
+<item name="$CSSFiles" sign="true"><text>xlogs.css</text></item></note>

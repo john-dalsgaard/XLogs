@@ -1,23 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='14.5'
- maintenanceversion='1.0' replicaid='C1258DE80072910F'>
-<noteinfo noteid='11e' unid='2C9E58F9F48A268EC12579F2003CFDD0' sequence='30'>
-<created><datetime dst='true'>20120502T130611,36+02</datetime></created>
-<modified><datetime dst='true'>20261006T092745,27+02</datetime></modified>
-<revised><datetime dst='true'>20261006T092745,26+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20261006T092745,26+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20260429T225122,66+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jakob Majkilde/O=MAJKILDE</name><name>CN=Per Henrik Lausten/O=PHL Consult</name><name
->CN=sherlock-demo/O=sherlock-demo</name><name>CN=Knud E Højslet/O=K E Højslet ApS</name><name
->CN=BM1/O=BMA</name><name>CN=Knud E Højslet/O=K E Højslet ApS</name><name
->CN=BroenLab/O=BroenLab</name><name>CN=Knud E Højslet/O=K E Højslet ApS</name><name
->CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name
->CN=Sherlock/O=AMV</name><name>CN=John Dalsgaard/O=D-D</name><name>CN=Sherlock/O=AMV</name><name
->CN=John Dalsgaard/O=D-D</name><name>CN=Knud E Højslet/O=K E Højslet ApS</name><name
->CN=Per Henrik Lausten/O=PHL Consult</name><name>CN=sherlock-demo/O=sherlock-demo</name><name
->CN=Knud E Højslet/O=K E Højslet ApS</name><name>CN=John Dalsgaard/O=D-D</name></updatedby>
-<item name='IconBitmap' summary='true' sign='true'>
-<rawitemdata type='6'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" default="true" class="icon">
+    <item name="IconBitmap" summary="true" sign="true">
+        <rawitemdata type="6">
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
 AYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAHAAAADwAAAA8AAAAPgAAAH4AAAB/AAAA/4AAAf
 /AAAP/4AAH//gAH///AP//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiAAAAAAAAAAAAAAI
@@ -30,20 +14,49 @@ ZmbyL2byL2byL2ZmbAAAj2ZmIiJmIiJmIiJmZvgAAIxmZiIiZiIiZiIiZmbIAAAI9mbyL2byL2by
 L2ZvgAAACMZmZmZmZmZmZmZmbIAAAACMZmZmZmZmZmZmZsgAAAAACMZmZmZmZmZmZmyAAAAAAACM
 9mZmZmZmZm/IAAAAAAAACIz2ZmZmZm/IgAAAAAAAAAAIiMZmZmyIgAAAAAAAAAAAAACIiIiIAAAA
 AAAAUEECICABAAD/////+A4DgA==
-</rawitemdata></item>
-<item name='$DBTheme' sign='true'><text>Majkilde.theme</text></item>
-<item name='$DefaultClientXPage' sign='true'><text>Reader.xsp</text></item>
-<item name='$DefaultFrameset' sign='true'><text>admin</text></item>
-<item name='$LaunchXPageRunOnServer' sign='true'><text>0</text></item>
-<item name='$FlagsNoRefresh' sign='true'><text/></item>
-<item name='$DefaultXPage' sign='true'><text>Reader.xsp</text></item>
-<item name='$TemplateServerName' sign='true'><text>CN=Knud E Højslet/O=K E Højslet ApS</text></item>
-<item name='$TemplateFileName' sign='true'><text>CN=Sherlock3/O=EHQ!!sherlock\v19\xlogs.ntf</text></item>
-<item name='$PIRCRefreshModTime' sign='true'><datetime dst='true'>20240701T135906,57+02</datetime></item>
-<item name='$TemplateModTime' sign='true'><datetime dst='true'>20230620T135851,40+02</datetime></item>
-<item name='$Daos'><text>0</text></item>
-<item name='$LargeSummary'><text>0</text></item>
-<item name='$Flags'><text>J7F!</text></item>
-<item name='$TITLE'><text>XLogs File Reader 3.5
-#1XLogs File Reader 3.5</text></item></note>
-
+</rawitemdata>
+    </item>
+    <item name="$DBTheme" sign="true">
+        <text>xlogs.theme</text>
+    </item>
+    <item name="$DefaultClientXPage" sign="true">
+        <text>Reader.xsp</text>
+    </item>
+    <item name="$DefaultFrameset" sign="true">
+        <text>admin</text>
+    </item>
+    <item name="$LaunchXPageRunOnServer" sign="true">
+        <text>0</text>
+    </item>
+    <item name="$FlagsNoRefresh" sign="true">
+        <text/>
+    </item>
+    <item name="$DefaultXPage" sign="true">
+        <text>Reader.xsp</text>
+    </item>
+    <item name="$TemplateServerName" sign="true">
+        <text>CN=Knud E Højslet/O=K E Højslet ApS</text>
+    </item>
+    <item name="$TemplateFileName" sign="true">
+        <text>CN=Sherlock3/O=EHQ!!sherlock\v19\xlogs.ntf</text>
+    </item>
+    <item name="$PIRCRefreshModTime" sign="true">
+        <datetime dst="true">20240701T135906,57+02</datetime>
+    </item>
+    <item name="$TemplateModTime" sign="true">
+        <datetime dst="true">20230620T135851,40+02</datetime>
+    </item>
+    <item name="$Daos">
+        <text>0</text>
+    </item>
+    <item name="$LargeSummary">
+        <text>0</text>
+    </item>
+    <item name="$Flags">
+        <text>J7F!</text>
+    </item>
+    <item name="$TITLE">
+        <text>XLogs File Reader 3.6
+#1XLogs File Reader 3.6</text>
+    </item>
+</note>

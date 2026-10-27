@@ -30,6 +30,17 @@
 					</filters>
 				</action>
 			</item>
+			<item name="Design update" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[data]/IBM_TECHNICAL_SUPPORT/design_update.log</filename>
+					<filename encoding="UTF-8">[data]/IBM_TECHNICAL_SUPPORT/design_update_*.log</filename>
+					<filters>
+						<filter applyto="line" color="darkred" name="Errors">(?i)\b(error|failed|failure)\b</filter>
+						<filter applyto="line" background="yellow" name="Warnings">(?i)\bwarning\b</filter>
+						<filter applyto="line" color="darkgreen" name="Completed">^Design refresh completed</filter>
+					</filters>
+				</action>
+			</item>
 			<item name="System info">
 				<action type="filereader" filetype="text">
 					<filename>[data]/IBM_TECHNICAL_SUPPORT/sysinfo*.log</filename>
@@ -87,6 +98,38 @@
 			<item name="HTTP request logging" restricted="true">
 				<action type="filereader" filetype="text">
 					<filename encoding="UTF-8">[data]/IBM_TECHNICAL_SUPPORT/htthr*.log</filename>
+				</action>
+			</item>
+		</item>
+		<item name="Traveler" id="traveler" page="Reader.xsp" hideWhenEmpty="true">
+			<action type="link" url="Reader.xsp?tab=traveler" />
+			<item name="Errors" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[travelerlogs]/NTSErrors*.log</filename>
+					<filename>[travelerlogs]/NTSErrors*.zip</filename>
+				</action>
+			</item>
+			<item name="Activity" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[travelerlogs]/NTSActivity*.log</filename>
+					<filename>[travelerlogs]/NTSActivity*.zip</filename>
+				</action>
+			</item>
+			<item name="Usage" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[travelerlogs]/NTSUsage*.log</filename>
+					<filename>[travelerlogs]/NTSUsage*.zip</filename>
+				</action>
+			</item>
+			<item name="Audit" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[travelerlogs]/NTSAudit*.log</filename>
+					<filename>[travelerlogs]/NTSAudit*.zip</filename>
+				</action>
+			</item>
+			<item name="System dumps" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename encoding="UTF-8">[travelerlogs]/dumps/systemdump*.log</filename>
 				</action>
 			</item>
 		</item>

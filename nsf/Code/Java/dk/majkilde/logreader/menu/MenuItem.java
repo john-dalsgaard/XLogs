@@ -27,6 +27,7 @@ public class MenuItem implements IMenu, Serializable {
 	private final String name;
 	private final String id;
 	private boolean restricted = false;
+	private boolean hideWhenEmpty = false;
 
 	private IAction action = new NullAction();
 
@@ -58,6 +59,8 @@ public class MenuItem implements IMenu, Serializable {
 		}
 
 		menu.setRestricted(menuXML.string("restricted").equalsIgnoreCase("true"));
+
+		menu.hideWhenEmpty = menuXML.string("hideWhenEmpty").equalsIgnoreCase("true");
 
 		menu.setAction(ActionFactory.createAction(menuXML, menu));
 
@@ -116,6 +119,7 @@ public class MenuItem implements IMenu, Serializable {
 	@Override
 	public boolean isVisible() {
 		try {
+			if (hideWhenEmpty && items.isEmpty()) return false;
 			if (restricted) {
 				return getAction().isValid() && canReadLogs(NotesObjects.getCurrentSession());
 			} else {

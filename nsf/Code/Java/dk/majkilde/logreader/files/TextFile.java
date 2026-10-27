@@ -40,14 +40,15 @@ public class TextFile implements IFile, Serializable {
 	private String pagingNotice = "";
 
 	public TextFile setPagingKey(String key) { this.pagingKey = key; return this; }
-	public boolean isPaged() { return true; }
+	private boolean isArchive() { return getFilename().toLowerCase(java.util.Locale.ROOT).endsWith(".zip"); }
+	public boolean isPaged() { return !isArchive(); }
 	public int getPageSize() {
 		Object value = XSPUtils.getSessionScope().get("xlogs.pageSize." + pagingKey);
 		return value instanceof Integer && PagingOptions.isAllowed(((Integer) value).intValue())
 				? ((Integer) value).intValue() : PagingOptions.getDefaultSize();
 	}
 	public java.util.List<javax.faces.model.SelectItem> getPageSizeOptions() { return PagingOptions.getSelectItems(); }
-	public boolean isShowBottomPaging() { return PagingOptions.showBottomNavigation(shownEnd - shownStart); }
+	public boolean isShowBottomPaging() { return (isHasOlder() || isHasNewer()) && PagingOptions.showBottomNavigation(shownEnd - shownStart); }
 	// Select-one controls validate against String item values before updating the model.
 	public String getPageSizeSelection() { return Integer.toString(getPageSize()); }
 	public void setPageSizeSelection(String size) { setPageSize(Integer.parseInt(size)); }
@@ -56,6 +57,7 @@ public class TextFile implements IFile, Serializable {
 			throw new IllegalArgumentException("Unsupported page size: " + size);
 		}
 		XSPUtils.getSessionScope().put("xlogs.pageSize." + pagingKey, Integer.valueOf(size));
+		if (snapshotLines <= size) olderLines = 0;
 	}
 	public void older() {
 		if (shownStart > 0) olderLines = snapshotLines - shownStart;
@@ -113,6 +115,7 @@ public class TextFile implements IFile, Serializable {
 
 	@Override
 	public String getHtml() {
+		if (isArchive()) return "Archived log. Use the download link above to open the ZIP file.";
 		final long timingId = TIMING_SEQUENCE.incrementAndGet();
 		final long totalStart = java.lang.System.nanoTime();
 		boolean completed = false;

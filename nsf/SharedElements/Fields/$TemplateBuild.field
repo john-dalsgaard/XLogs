@@ -1,26 +1,37 @@
-<?xml version='1.0' encoding='utf-8'?>
-<note class='sharedfield' xmlns='http://www.lotus.com/dxl' version='14.5'
- maintenanceversion='1.0' replicaid='C1258DE80072910F'>
-<noteinfo noteid='12a' unid='C12579F2003CFDCBC12572A7002AC3BF' sequence='82'>
-<created><datetime>20070323T084706,23+01</datetime></created>
-<modified><datetime dst='true'>20261020T133211,47+02</datetime></modified>
-<revised><datetime dst='true'>20261020T133211,46+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20261020T133211,46+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20260429T225122,77+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=John Dalsgaard/O=D-D</name></updatedby>
-<item name='$TITLE'><text>$TemplateBuild</text></item>
-<item name='$Fields'><text>$TemplateBuild</text></item>
-<item name='$Flags'><text/></item>
-<item name='$Info' sign='true'><text>$TemplateBuild</text></item>
-<item name='$Body' summary='true' sign='true'>
-<rawitemdata type='1'>
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="sharedfield">
+    <item name="$TITLE">
+        <text>$TemplateBuild</text>
+    </item>
+    <item name="$Fields">
+        <text>$TemplateBuild</text>
+    </item>
+    <item name="$Flags">
+        <text/>
+    </item>
+    <item name="$Info" sign="true">
+        <text>$TemplateBuild</text>
+    </item>
+    <item name="$Body" summary="true" sign="true">
+        <rawitemdata type="1">
 gQKC/1IAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAgwQBAIX/CAAAAAAA3QYAAIr/iv8yAIoAAAUAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAADgAAAAAAJFRlbXBsYXRlQnVpbGTeBgAAiv+F/wgAAAAAAA==
-</rawitemdata></item>
-<item name='$Language' sign='true'><text>en</text></item>
-<item name='$TemplateBuild' sign='true'><text>3.5</text></item>
-<item name='$TemplateBuildName' sign='true'><text>XLogs File Reader 3.5</text></item>
-<item name='$TemplateBuildDate' sign='true'><datetime dst='true'>20261020T133211,00+02</datetime></item>
-<item name='$comment' sign='true'><text>Rev 6.5</text></item></note>
-
+</rawitemdata>
+    </item>
+    <item name="$Language" sign="true">
+        <text>en</text>
+    </item>
+    <item name="$TemplateBuild" sign="true">
+        <text>3.6</text>
+    </item>
+    <item name="$TemplateBuildName" sign="true">
+        <text>XLogs File Reader 3.6</text>
+    </item>
+    <item name="$TemplateBuildDate" sign="true">
+        <datetime>20261026T221227,00+01</datetime>
+    </item>
+    <item name="$comment" sign="true">
+        <text>Rev 6.5</text>
+    </item>
+</note>

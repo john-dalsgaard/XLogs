@@ -3,14 +3,11 @@
 	<h1>About</h1>
 	<div class="viewer">
 		<xc:form_about_me></xc:form_about_me>
-		<!-- 
 		<xc:form_about_server></xc:form_about_server>
 		<xc:form_about_user></xc:form_about_user>
 		<xc:form_about_extlib loaded="false"></xc:form_about_extlib>
 		<xc:form_about_dojo></xc:form_about_dojo>
 		<xc:form_about_java></xc:form_about_java>
 		<xc:form_about_browser></xc:form_about_browser>
-		<xc:form_about_extlib></xc:form_about_extlib>
-		 -->
 	</div>
 </xp:view>

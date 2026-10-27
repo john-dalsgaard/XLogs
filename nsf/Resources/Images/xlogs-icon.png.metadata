@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="form">
+<item name="$TITLE"><text>xlogs-icon.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide"><number>1</number></item>
+<item name="$ImagesHigh"><number>1</number></item>
+<item name="$ImagesColorize"><number>0</number></item>
+<item name="$MimeType"><text>image/png</text></item>
+<item name="$ImageNames"><text>xlogs-icon.png</text></item>
+</note>

@@ -34,6 +34,13 @@ public class Directory implements Serializable {
 
 	public static String getCleanPattern(final String filePattern) {
 		String pattern = filePattern;
+		if (NotesStrings.startsWithIgnoreCase(pattern, "[travelerlogs]")) {
+			String root = NotesEnvironment.getEnvironmentString("NTS_LOG_ROOT_DIR", true);
+			if (NotesStrings.isBlank(root)) {
+				root = NotesEnvironment.getDataFolder() + "IBM_TECHNICAL_SUPPORT/traveler/logs";
+			}
+			pattern = root + File.separator + pattern.substring("[travelerlogs]".length() + 1);
+		}
 		pattern = expandProperty(pattern, JAVA_HOME, "java.home");
 		pattern = expandProperty(pattern, USER_HOME, "user.home");
 
@@ -134,22 +141,14 @@ public class Directory implements Serializable {
 		if (pattern == null)
 			return true;
 
-		String[] cards = pattern.split("\\*");
-
-		// Iterate over the cards.
-		for (String card : cards) {
-			int idx = text.indexOf(card);
-
-			// Card not detected in the text.
-			if (idx == -1) {
-				return false;
-			}
-
-			// Move ahead, towards the right of the text.
-			text = text.substring(idx + card.length());
+		StringBuilder regex = new StringBuilder();
+		String[] cards = pattern.split("\\*", -1);
+		for (int i = 0; i < cards.length; i++) {
+			if (i > 0) regex.append(".*");
+			regex.append(java.util.regex.Pattern.quote(cards[i]));
 		}
-
-		return true;
+		// Match the whole filename: *.log must not also select *.log.lck.
+		return java.util.regex.Pattern.compile(regex.toString()).matcher(text).matches();
 	}
 
 }
