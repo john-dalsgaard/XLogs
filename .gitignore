@@ -1,0 +1,6 @@
+# Local Domino release binaries and generated download packages
+/*.ntf
+/*.NTF
+/*.nsf
+/*.NSF
+/dist/
