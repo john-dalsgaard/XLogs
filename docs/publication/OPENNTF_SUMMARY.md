@@ -20,6 +20,8 @@ XLogs continues **XPages Log File Reader**, originally developed by **Jakob Majk
 
 The project remains open source under the **Apache License 2.0**, with the original credits and third-party notices retained.
 
+XLogs has been tested and is running on Domino 9.0.1 FP10 and selected versions up to and including Domino 14.5.1 FP1.
+
 ## Getting started
 
 Download and extract the packaged template, create a database on your Domino server from xlogs.ntf, sign the application design with an appropriate ID and configure the database ACL before use. See the installation guide for details.

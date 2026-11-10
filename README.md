@@ -26,7 +26,7 @@ See [installation and development](docs/INSTALLATION.md) for deployment, access 
 
 This repository contains a Domino Designer on-disk project under `nsf/`. A GitHub source ZIP is not an installable NSF or NTF. Use a packaged database from a release when one is available, or build from source with Domino Designer.
 
-Recent development includes adjustments for Domino 14.x and Java/JAR locations used by Domino 14.5. A tested server and browser compatibility matrix has not yet been published; these changes do not establish a minimum supported version or guarantee compatibility.
+XLogs has been tested and is running on Domino 9.0.1 FP10 and selected versions up to and including Domino 14.5.1 FP1. Testing covers selected releases rather than every intermediate version.
 
 ## History
 

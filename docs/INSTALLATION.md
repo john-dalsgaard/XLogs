@@ -1,5 +1,9 @@
 # Installation and development
 
+## Tested Domino versions
+
+XLogs has been tested and is running on Domino 9.0.1 FP10 and selected versions up to and including Domino 14.5.1 FP1. Testing covers selected releases rather than every intermediate version.
+
 ## Deploying a packaged database
 
 1. Obtain the NSF/NTF from the release you intend to deploy and read its release notes. If no package is available, build from source as described below.

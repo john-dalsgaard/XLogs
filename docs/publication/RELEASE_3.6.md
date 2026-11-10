@@ -14,6 +14,10 @@ XLogs 3.6 continues Jakob Majkilde's XPages Log File Reader under a new name and
 - **Configuration access:** server-wide properties/xsp.properties is available when the file exists and the user has the required permissions.
 - **Documentation:** current installation and configuration guides, preserved historical documentation, and original license and attribution files.
 
+## Tested Domino versions
+
+XLogs has been tested and is running on Domino 9.0.1 FP10 and selected versions up to and including Domino 14.5.1 FP1. Testing covers selected releases rather than every intermediate version.
+
 ## Installation and upgrade
 
 Use the packaged xlogs.ntf template to create the application database; GitHub's automatically generated source archives contain the on-disk project and are not installable NSF databases.
