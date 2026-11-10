@@ -22,7 +22,7 @@ Available entries depend on the server configuration, files present and user acc
 
 ## Installation and upgrade
 
-See [installation and development](docs/INSTALLATION.md) for deployment, access control and working with the source.
+See [installation and development](docs/INSTALLATION.md) for deployment, access control and working with the source, and [configuration](docs/CONFIGURATION.md) for menu entries, paths, encodings and filters.
 
 This repository contains a Domino Designer on-disk project under `nsf/`. A GitHub source ZIP is not an installable NSF or NTF. Use a packaged database from a release when one is available, or build from source with Domino Designer.
 
@@ -30,7 +30,7 @@ Recent development includes adjustments for Domino 14.x and Java/JAR locations u
 
 ## History
 
-The local Git history starts with a v3.4 source import. Earlier development history remains in Jakob's repository. Subsequent work includes OSGi logs, cached paging, error/trace filters, updated Java paths, Traveler logs and the XLogs layout and icon. See [CHANGELOG.md](CHANGELOG.md).
+The local Git history starts with a v3.4 source import. Earlier development history remains in Jakob's repository. Subsequent work includes OSGi logs, cached paging, error/trace filters, updated Java paths, Traveler logs and the XLogs layout and icon. See [CHANGELOG.md](CHANGELOG.md), the [upstream handover review](docs/UPSTREAM_REVIEW.md) and [historical manual](docs/legacy/README.md).
 
 ## Reporting issues
 

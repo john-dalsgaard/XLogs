@@ -15,7 +15,7 @@ For an upgrade, use the release's supported design replacement/refresh procedure
 
 Restricted menu entries check the effective user's server access using Domino's unrestricted-program or view-only-administrator access checks. Menu visibility is not a substitute for a carefully configured database ACL. Actual file access also depends on the server process and application execution permissions.
 
-The file resource `nsf/Resources/Files/config.xml` defines menu items, log paths, filters and read limits. The current defaults limit text reads to 10,000 lines and log database reads to 5,000 documents. Traveler paths use the `NTS_LOG_ROOT_DIR` notes.ini setting. Do not enable additional logging solely to populate a menu without considering the operational impact.
+The file resource `nsf/Resources/Files/config.xml` defines menu items, log paths, filters and read limits. Text pages default to 1,000 lines and allow up to 50,000 displayed lines; log database reads default to 5,000 documents. See [configuration](CONFIGURATION.md) for the legacy MaxTextLines setting and current memory behavior. Traveler paths use the `NTS_LOG_ROOT_DIR` notes.ini setting. Do not enable additional logging solely to populate a menu without considering the operational impact.
 
 ## Working with the source
 
@@ -29,7 +29,7 @@ Verify log reading, paging, filters, error/trace rendering, access restrictions,
 
 Distribute `LICENSE.txt`, `NOTICE.txt` and the third-party license files alongside the NSF/NTF. Preserve the licenses and notices embedded in bundled JARs and source resources. Include exact tested Domino versions, installation/upgrade notes and changes in the release description.
 
-The [original project's documentation](https://github.com/majkilde/LogFileReader/blob/master/doc/Documentation.pdf) is historical reference material. It has not been validated as an installation guide for the current XLogs version.
+The [original manual](legacy/README.md) is preserved as historical reference material. Use [the current configuration guide](CONFIGURATION.md) for XLogs setup.
 
 ## Debug logging
 
