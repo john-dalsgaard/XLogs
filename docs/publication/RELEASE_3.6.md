@@ -16,7 +16,7 @@ XLogs 3.6 continues Jakob Majkilde's XPages Log File Reader under a new name and
 
 ## Tested Domino versions
 
-XLogs has been tested and is running on Domino 9.0.1 FP10 and selected versions up to and including Domino 14.5.1 FP1. Testing covers selected releases rather than every intermediate version.
+XLogs has been tested and is running on Domino 9.0.1 FP10 and selected versions up to and including Domino 14.5.1 FP1 - on Windows and Linux. Testing covers selected releases rather than every intermediate version.
 
 ## Installation and upgrade
 
