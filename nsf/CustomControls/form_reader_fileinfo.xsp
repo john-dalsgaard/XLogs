@@ -4,10 +4,7 @@
 				<tr>
 					<th>Date:</th>
 					<td>
-						<xp:text escape="true" id="computedField3" value="#{javascript:viewScope.currentFile.getDate()}">
-							<xp:this.converter>
-								<xp:convertDateTime type="both"></xp:convertDateTime>
-							</xp:this.converter>
+						<xp:text escape="true" id="computedField3" value="#{javascript:dk.xpages.utils.XSPUtils.formatServerDate(viewScope.currentFile.getDate())}">
 						</xp:text>
 					</td>
 				</tr>

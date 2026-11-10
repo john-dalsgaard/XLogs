@@ -58,7 +58,7 @@ public class NotesEnvironment {
 	 */
 	public static File getConfigFile() {
 		String filename = getConfigFilename();
-		log.debug("Config file: {0}", filename);
+		XSPUtils.debug("Config file: " + filename);
 		File file = new File(filename);
 		return file;
 

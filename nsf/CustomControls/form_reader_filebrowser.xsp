@@ -18,17 +18,14 @@
 	</xp:panel>
 
 	<div class="fileSelector">
-		<xp:pager partialRefresh="true" id="filesPager" for="files" layout="Previous Next"></xp:pager>
+		<xp:pager partialRefresh="false" id="filesPager" for="files" layout="Previous Next"></xp:pager>
 		<ul>
 			<xp:repeat id="files" rows="5" var="file" removeRepeat="true">
 				<xp:this.value><![CDATA[#{javascript:viewScope.filelist.getFiles();}]]></xp:this.value>
 				<li>
 					<xp:link escape="true" id="tip">
 						<xp:this.styleClass><![CDATA[#{javascript:if( viewScope.currentFile==file) {"current"}}]]></xp:this.styleClass>
-						<xp:text escape="true" id="computedField3" styleClass="fileSelectorDate" value="#{javascript:file.getDate();}">
-							<xp:this.converter>
-								<xp:convertDateTime type="both" dateStyle="short" timeStyle="short"></xp:convertDateTime>
-							</xp:this.converter>
+						<xp:text escape="true" id="computedField3" styleClass="fileSelectorDate" value="#{javascript:dk.xpages.utils.XSPUtils.formatServerDate(file.getDate());}">
 						</xp:text>
 						<xp:text escape="true" styleClass="fileSelectorName" value="#{javascript:file.getFilename()}" />
 						<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">

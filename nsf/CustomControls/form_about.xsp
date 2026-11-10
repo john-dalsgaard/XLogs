@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<h1>About</h1>
-	<div class="viewer">
-		<xc:form_about_me></xc:form_about_me>
+	<xp:panel>
+		<xp:this.styleClass><![CDATA[#{javascript:'viewer xlogsAboutLayout' + (dk.xpages.utils.XSPUtils.canManageDebug() ? ' xlogsAboutWithDebug' : '')}]]></xp:this.styleClass>
+		<div class="xlogsAboutDetails">
+			<xc:form_about_me></xc:form_about_me>
 		<xc:form_about_server></xc:form_about_server>
 		<xc:form_about_user></xc:form_about_user>
 		<xc:form_about_extlib loaded="false"></xc:form_about_extlib>
 		<xc:form_about_dojo></xc:form_about_dojo>
 		<xc:form_about_java></xc:form_about_java>
 		<xc:form_about_browser></xc:form_about_browser>
-	</div>
+		</div>
+		<xp:panel rendered="#{javascript:dk.xpages.utils.XSPUtils.canManageDebug()}">
+			<xp:this.styleClass><![CDATA[#{javascript:'xlogsDebugCard' + (dk.xpages.utils.XSPUtils.isDebugEnabled() ? ' xlogsDebugActive' : '')}]]></xp:this.styleClass>
+			<h2>Debug logging</h2>
+			<xp:text tagName="span" value="#{javascript:dk.xpages.utils.XSPUtils.isDebugEnabled() ? 'Debug logging is active' : 'Debug logging is off'}">
+				<xp:this.styleClass><![CDATA[#{javascript:'xlogsDebugStatus' + (dk.xpages.utils.XSPUtils.isDebugEnabled() ? ' xlogsDebugStatusActive' : '')}]]></xp:this.styleClass>
+			</xp:text>
+			<p class="xlogsDebugIntro">Detailed diagnostics for troubleshooting. Errors are always logged.</p>
+			<dl class="xlogsDebugDetails"><dt>Server</dt><dd><xp:text value="#{javascript:dk.xpages.utils.XSPUtils.getDebugServer()}" /></dd>
+			<dt>Expires</dt><dd><xp:text value="#{javascript:dk.xpages.utils.XSPUtils.getDebugExpiry()}" /></dd></dl>
+			<xp:label for="debugDuration" value="#{javascript:dk.xpages.utils.XSPUtils.isDebugEnabled() ? 'New duration from now' : 'Duration'}" />
+			<xp:comboBox id="debugDuration" value="#{viewScope.xlogsDebugDuration}" defaultValue="#{javascript:dk.xpages.utils.XSPUtils.getDebugDurationSelection()}">
+				<xp:selectItem itemLabel="15 minutes" itemValue="15" />
+				<xp:selectItem itemLabel="30 minutes" itemValue="30" />
+				<xp:selectItem itemLabel="1 hour" itemValue="60" />
+				<xp:selectItem itemLabel="3 hours" itemValue="180" />
+				<xp:selectItem itemLabel="Until disabled manually" itemValue="0" />
+			</xp:comboBox>
+			<div class="xlogsDebugActions">
+			<xp:button id="enableDebug" styleClass="xlogsDebugPrimary" value="#{javascript:dk.xpages.utils.XSPUtils.isDebugEnabled() ? 'Change duration' : 'Enable debug logging'}">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:try {
+    var wasActive = dk.xpages.utils.XSPUtils.isDebugEnabled();
+    dk.xpages.utils.XSPUtils.setDebugEnabled(true, parseInt(viewScope.xlogsDebugDuration == null ? dk.xpages.utils.XSPUtils.getDebugDurationSelection() : viewScope.xlogsDebugDuration, 10));
+    dk.xpages.utils.XSPUtils.addInfo(wasActive ? "Debug logging duration updated for this server." : "Debug logging enabled for this server.");
+} catch (e) {
+    dk.xpages.utils.XSPUtils.addError("Could not update debug logging: " + e.toString());
+}}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button id="disableDebug" value="End debug logging" rendered="#{javascript:dk.xpages.utils.XSPUtils.isDebugEnabled()}">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action><![CDATA[#{javascript:try {
+    dk.xpages.utils.XSPUtils.setDebugEnabled(false);
+    dk.xpages.utils.XSPUtils.addInfo("Debug logging disabled for this server.");
+} catch (e) {
+    dk.xpages.utils.XSPUtils.addError("Could not disable debug logging: " + e.toString());
+}}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			</div>
+			<p class="xlogsDebugNote">Applies to this database on this server. Timed logging stops automatically. Without an expiry, disable it here when finished.</p>
+		</xp:panel>
+	</xp:panel>
 </xp:view>

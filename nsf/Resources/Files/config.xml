@@ -166,6 +166,15 @@
 					</filters>
 				</action>
 			</item>
+			<!-- 2026-10-28 John Dalsgaard: expose server-wide XPages configuration. -->
+			<item name="xsp.properties" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/properties/xsp.properties</filename>
+					<filters>
+						<filter applyto="line" color="#49D164" bold="true" name="comments">^\s*[#!]</filter>
+					</filters>
+				</action>
+			</item>
 			<item name="rcpinstall.properties" restricted="true">
 				<action type="filereader" filetype="text">
 					<filename>[data]/domino/workspace/.config/rcpinstall.properties</filename>

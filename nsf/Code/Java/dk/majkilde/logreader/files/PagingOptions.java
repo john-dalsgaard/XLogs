@@ -10,7 +10,7 @@ import javax.faces.model.SelectItem;
 public final class PagingOptions {
 	public static final String DEFAULT_SIZE = "1000";
 	private static final List<String> SIZES = Collections.unmodifiableList(
-			Arrays.asList("250", DEFAULT_SIZE, "5000", "10000"));
+			Arrays.asList("250", DEFAULT_SIZE, "5000", "10000", "50000"));
 	private static final int BOTTOM_NAVIGATION_LINES = 100;
 
 	private PagingOptions() { }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note xmlns="http://www.lotus.com/dxl" class="view">
+    <item name="$FormulaClass" sign="true">
+        <text>1</text>
+    </item>
+    <item name="$palmVersion" sign="true">
+        <datetime dst="true">20131009T074608,00+02</datetime>
+    </item>
+    <item name="$palmDate" sign="true">
+        <datetime dst="true">20131017T092356,00+02</datetime>
+    </item>
+    <item name="$palmUser" sign="true">
+        <text>CN=Jakob Majkilde/O=MAJKILDE</text>
+    </item>
+    <item name="$palmSource" sign="true">
+        <text>title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;title=MVC Database;filename=xpages\mvc.nsf;server=DEV;</text>
+    </item>
+    <item name="$TITLE" sign="true">
+        <text>(XLogsDebugSettings)</text>
+    </item>
+    <item name="$Index" sign="true">
+        <text/>
+    </item>
+    <item name="$Formula" summary="true" sign="true">
+        <formula compiled="true">
+YAAFACYAIgADAAsACQAEAERlYnVnU2VydmVyJENvbmZsaWN0JFJFRgQABAAAACYABQAEAEZvcm0B
+ABIAWExvZ3NEZWJ1Z1NldHRpbmdzCgIDAAcADgAIAAlMMVMyUzNT
+</formula>
+    </item>
+    <item name="$Collation" summary="true">
+        <rawitemdata type="2">
+GAABAABEAGYAAAALAERlYnVnU2VydmVy
+</rawitemdata>
+    </item>
+    <item name="$ViewFormat" summary="true" sign="true">
+        <rawitemdata type="5">
+AQABAAUACQwAAFZDAQALAAYAAAAAAJYABQABCwAAAAAAAAAAAAICAABARGVidWdTZXJ2ZXJTZXJ2
+ZXImAAIAAAABAQAJAQABCgEBAQoAAAEArSsEAL8AAQAAAAAAAAAAAFdDBgEBCwAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAABCAIAAAAABAF9fXwAFAP///wABAAAAAAAAAAAA
+AAAAAAEA////AAEAX19fAAAAAQD///8AAQD///8AAQAAAAAAAAAIAAAAAAABAA==
+</rawitemdata>
+    </item>
+    <item name="$Fonts" sign="true">
+        <textlist>
+            <text>5</text>
+            <text>53</text>
+            <text>Consolas</text>
+            <text>6</text>
+            <text>53</text>
+            <text>Consolas</text>
+        </textlist>
+    </item>
+    <item name="$comment" sign="true">
+        <text>MVC Database</text>
+    </item>
+    <item name="$Flags">
+        <text>Y</text>
+    </item>
+    <item name="$DesignerBuild">
+        <text>Build V1451FP1_06262026</text>
+    </item>
+    <item name="$V5ACTIONS" sign="true">
+        <rawitemdata type="1">
+i/8oAAEABTVDb25zb2xhcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL0cAAAAAAEAAAAAABEAAAAA
+AAAABQEBCwgAAQB5/2wAAQAAAAAAAQAAAAAAAQD///8AAQDw8PAAAgAfAAAAAAAAAAAAAwAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAD2/zEAAAAAAAMAEwAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAYWN0aW9uQmFyQnV0dG9uP/z/
+OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+
+/3AAAAABAAAAHwEAAAgAJgAAAAAAIENyZWF0ZSAsAAAAHgACAOgDAAAAAAAAAQAIAERvY3VtZW50
+7QIDAAcADAAFAAkwUzBFACYAAAAYAAEABwBbQWRtaW5dAOcAdAIeAQMABwAMAAUACTNTNVMAvv8+
+AAAAAQAAAJ8BAAAIAAAAAAAAACBTZWFyY2ggIAAAABIAAgCQFwAAAAAAAO0BAwAHAAwABQAJMFMw
+RQA=
+</rawitemdata>
+    </item>
+</note>

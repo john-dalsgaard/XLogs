@@ -30,3 +30,21 @@ Verify log reading, paging, filters, error/trace rendering, access restrictions,
 Distribute `LICENSE.txt`, `NOTICE.txt` and the third-party license files alongside the NSF/NTF. Preserve the licenses and notices embedded in bundled JARs and source resources. Include exact tested Domino versions, installation/upgrade notes and changes in the release description.
 
 The [original project's documentation](https://github.com/majkilde/LogFileReader/blob/master/doc/Documentation.pdf) is historical reference material. It has not been validated as an installation guide for the current XLogs version.
+
+## Debug logging
+
+In the **web interface**, open **About → Debug logging** with the **[Admin]** ACL role and at least **Editor** web access. Use the existing `Admin` role in the database ACL and assign it to the intended administrator or group. The maximum Internet access can remain Editor. This section is not part of the legacy Notes client interface. Access checks use the effective user's role and web access level; the write action repeats the check. If a user has an explicit ACL entry, assign the role there: Domino's queryAccessRoles checks an explicit entry before group memberships.
+
+Choose **15 minutes**, **30 minutes**, **1 hour**, **3 hours** (the default), or **Until disabled manually**, then click **Enable debug logging**. While logging is active, **Change duration** starts a new period from now. The status and expiry are shown on the page. **End debug logging**, visible only while active, stops either mode. Normal error logging remains enabled independently. Diagnostics and timing output go to the Domino server console/log.
+
+Settings are ordinary background documents with form `XLogsDebugSettings`, one per executing server's full Domino name. A hidden `(XLogsDebugSettings)` view indexes `DebugServer` as its first sorted column. The view is supplied by the database design and must select `Form = "XLogsDebugSettings"`. The application never creates or modifies views. No configuration form, helper document or Notes UI setup is required. Older settings are reused via this view but remain off until saved with an explicit duration.
+
+The application caches only the configuration document's UNID per server. The first lookup uses the keyed view; later requests read directly by UNID. Deleted/replaced documents trigger a new keyed lookup. The configuration values are read once per request, with no database scan and no shared cache of enabled/disabled state. Changes apply on subsequent requests without an HTTP restart. Expiry is checked for each debug call, including within a request. No scheduled cleanup agent is required.
+
+Replicating the database to a different server does not enable debug there because its server key differs. Disabling or expiry does not delete the configuration document.
+
+To verify deployment, sign/synchronize the Java and About design changes, then open `About.xsp` in a browser. Test with a user who receives [Admin] through a group, Editor web access, and a user without the role. Enable timed debug and check `XLogs timing` output while reading a text log. Confirm manual disable, automatic expiry and unlimited mode. With a replica on another server, confirm debug stays off there. The test must use the web login whose effective permissions are being checked.
+
+## Displayed dates
+
+File modification times, the About version date, debug expiry and Ext file dates use `yyyy-MM-dd HH:mm:ss` followed by the server JVM time zone (for example, `2026-11-10 14:35:08 CET`). The format is independent of browser language and regional settings. The time-zone suffix reflects daylight saving time at the displayed timestamp. Dates inside log content retain their original format.

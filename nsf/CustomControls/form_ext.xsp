@@ -37,7 +37,7 @@
 							</xp:text>
 						</td>
 						<td>
-							<xp:text escape="true" value="#{javascript:java.text.DateFormat.getDateInstance().format( file.lastModified());}"></xp:text>
+							<xp:text escape="true" value="#{javascript:dk.xpages.utils.XSPUtils.formatServerDate(new java.util.Date(file.lastModified()));}"></xp:text>
 						</td>
 					</tr>
 				</xp:repeat>

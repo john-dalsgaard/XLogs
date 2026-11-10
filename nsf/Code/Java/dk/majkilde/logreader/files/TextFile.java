@@ -119,7 +119,7 @@ public class TextFile implements IFile, Serializable {
 		final long timingId = TIMING_SEQUENCE.incrementAndGet();
 		final long totalStart = java.lang.System.nanoTime();
 		boolean completed = false;
-		System.out.println("XLogs timing [" + timingId + "] start file=" + getFilename()
+		dk.xpages.utils.XSPUtils.debug("XLogs timing [" + timingId + "] start file=" + getFilename()
 				+ " bytes=" + getSize() + " encoding=" + this.encoding
 				+ " pageSize=" + getPageSize()
 				+ " filters=" + this.filters.getFilterList().size());
@@ -153,23 +153,23 @@ public class TextFile implements IFile, Serializable {
 			stageStart = timingStart(timingId, "join", content.size());
 			String html = NotesStrings.join("", content);
 			timingEnd(timingId, "join", stageStart, content.size());
-			System.out.println("XLogs timing [" + timingId + "] result htmlChars=" + html.length());
+			dk.xpages.utils.XSPUtils.debug("XLogs timing [" + timingId + "] result htmlChars=" + html.length());
 			completed = true;
 			return html;
 		} finally {
-			System.out.println("XLogs timing [" + timingId + "] total ms="
+			dk.xpages.utils.XSPUtils.debug("XLogs timing [" + timingId + "] total ms="
 					+ elapsedMillis(totalStart) + " status=" + (completed ? "ok" : "failed"));
 		}
 	}
 
 	private long timingStart(long timingId, String stage, int lines) {
-		System.out.println("XLogs timing [" + timingId + "] " + stage + " start lines=" + lines);
+		dk.xpages.utils.XSPUtils.debug("XLogs timing [" + timingId + "] " + stage + " start lines=" + lines);
 		return java.lang.System.nanoTime();
 	}
 
 	private void timingEnd(long timingId, String stage, long start, int lines) {
 		long elapsed = java.lang.System.nanoTime() - start;
-		System.out.println("XLogs timing [" + timingId + "] " + stage
+		dk.xpages.utils.XSPUtils.debug("XLogs timing [" + timingId + "] " + stage
 				+ " ms=" + (elapsed / 1000000.0) + " lines=" + lines);
 	}
 

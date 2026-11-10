@@ -312,3 +312,41 @@ padding-right:13px;
 .xlogsApp .logPagingLinks { display:inline-flex; gap:12px; }
 .xlogsApp .logPagingLinks a { color:#245fbe; text-decoration:none; }
 .xlogsApp .logPagingLinks a:hover { text-decoration:underline; }
+
+/* About: keep diagnostic controls together beside the reference information. */
+.xlogsApp .xlogsAboutLayout { display:grid; grid-template-columns:minmax(0, 1fr); gap:24px; align-items:start; }
+.xlogsApp .xlogsAboutWithDebug { grid-template-columns:minmax(0, 1fr) 320px; }
+.xlogsApp .xlogsAboutDetails { min-width:0; }
+.xlogsApp .xlogsAboutDetails .lotusTable { width:100%; }
+.xlogsApp .xlogsAboutDetails td { overflow-wrap:anywhere; }
+.xlogsApp .xlogsDebugCard {
+    min-width:0; padding:20px; background:#e2e8f1; border:1px solid #aab8cc;
+    border-radius:8px; box-sizing:border-box;
+}
+.xlogsApp .xlogsDebugCard.xlogsDebugActive { border:2px solid #a15b00; padding:19px; }
+.xlogsApp .xlogsDebugCard h2 { margin:0 0 12px; padding:0; color:#192b46; font-size:18px; font-weight:600; }
+.xlogsApp .xlogsDebugStatus {
+    display:block; padding:9px 11px; border-radius:4px; background:#cbd5e3;
+    color:#263b58; font-weight:600; line-height:1.4;
+}
+.xlogsApp .xlogsDebugStatusActive { background:#8b4b00; color:#fff; }
+.xlogsApp .xlogsDebugIntro { margin:14px 0; line-height:1.5; }
+.xlogsApp .xlogsDebugDetails { margin:0 0 16px; }
+.xlogsApp .xlogsDebugDetails dt { margin-top:10px; color:#42536c; font-size:12px; font-weight:600; }
+.xlogsApp .xlogsDebugDetails dd { margin:3px 0 0; overflow-wrap:anywhere; line-height:1.4; }
+.xlogsApp .xlogsDebugCard label { display:block; margin:0 0 6px; font-weight:600; }
+.xlogsApp .xlogsDebugCard select { width:100%; padding:7px; box-sizing:border-box; }
+.xlogsApp .xlogsDebugActions { display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+.xlogsApp .xlogsDebugActions button, .xlogsApp .xlogsDebugActions input {
+    width:100%; margin:0; padding:9px 10px; border:1px solid #aab8cc;
+    border-radius:4px; background:#f7f9fd; color:#192b46; font-weight:600;
+    white-space:normal; cursor:pointer;
+}
+.xlogsApp .xlogsDebugActions .xlogsDebugPrimary { background:#17498b; color:#fff; border-color:#17498b; }
+.xlogsApp .xlogsDebugActions button:disabled, .xlogsApp .xlogsDebugActions input:disabled { opacity:0.5; cursor:default; }
+.xlogsApp .xlogsDebugNote { margin:14px 0 0; color:#42536c; font-size:12px; line-height:1.5; }
+.xlogsApp .messages ul { list-style:none; padding:0; margin:0 0 12px; }
+@media (max-width:1150px) {
+    .xlogsApp .xlogsAboutWithDebug { grid-template-columns:minmax(0, 1fr); }
+    .xlogsApp .xlogsDebugCard { grid-row:1; }
+}

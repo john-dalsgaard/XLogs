@@ -45,7 +45,7 @@ requestScope.xlogsContent = current == null ? "" : current.getHtml();
 				<xp:label for="pageSize" value="Lines per page:" />
 				<xp:comboBox id="pageSize" value="#{viewScope.currentFile.pageSizeSelection}">
 					<xp:selectItems value="#{viewScope.currentFile.pageSizeOptions}" />
-					<xp:eventHandler event="onchange" submit="true" refreshMode="partial" refreshId="contentBody" />
+					<xp:eventHandler event="onchange" submit="true" refreshMode="partial" refreshId="contentBody" onComplete="xlogsRestoreFilters();" />
 				</xp:comboBox>
 				<xc:form_reader_paging id="topPaging" />
 			</xp:panel>

@@ -49,7 +49,7 @@ public class XMLFile extends TextFile implements Serializable {
 
 		// XSL transform
 		String stage = "load stylesheet";
-		System.out.println("XLogs XML start file=" + getFilename() + " stylesheet=" + this.xlsFilename);
+		XSPUtils.debug("XLogs XML start file=" + getFilename() + " stylesheet=" + this.xlsFilename);
 		try (InputStream stylesheet = XSPUtils.getResourceAsStream(this.xlsFilename)) {
 			if (stylesheet == null) {
 				throw new IOException("Stylesheet resource not found: " + this.xlsFilename);
@@ -70,13 +70,12 @@ public class XMLFile extends TextFile implements Serializable {
 			// Do the transformation
 			stage = "transform XML";
 			transformer.transform(inputStream, result);
-			System.out.println("XLogs XML success file=" + getFilename() + " stylesheet=" + this.xlsFilename);
+			XSPUtils.debug("XLogs XML success file=" + getFilename() + " stylesheet=" + this.xlsFilename);
 
 			return output.toString(this.encoding);
 		} catch (Exception e) {
-			System.out.println("XLogs XML failed file=" + getFilename() + " stylesheet=" + this.xlsFilename
+			XSPUtils.debug("XLogs XML failed file=" + getFilename() + " stylesheet=" + this.xlsFilename
 					+ " stage=" + stage + " exception=" + e.toString());
-			e.printStackTrace(System.out);
 			this.log.error(e);
 			return super.getHtml();
 		}

@@ -39,10 +39,7 @@ template.getVersion();}]]></xp:this.value>
 				&#160;(
 				<xp:text escape="true" disableTheme="true">
 					<xp:this.value><![CDATA[#{javascript:template = new dk.xpages.utils.design.TemplateVersion();
-template.getDate();}]]></xp:this.value>
-					<xp:this.converter>
-						<xp:convertDateTime type="both"></xp:convertDateTime>
-					</xp:this.converter>
+dk.xpages.utils.XSPUtils.formatServerDate(template.getDate());}]]></xp:this.value>
 				</xp:text>
 				)
 			</td>
