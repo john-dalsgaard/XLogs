@@ -23,13 +23,13 @@ AAAAAAAAAAAAAAAAAAAAAAAADgAAAAAAJFRlbXBsYXRlQnVpbGTeBgAAiv+F/wgAAAAAAA==
         <text>en</text>
     </item>
     <item name="$TemplateBuild" sign="true">
-        <text>3.6</text>
+        <text>3.7</text>
     </item>
     <item name="$TemplateBuildName" sign="true">
-        <text>XLogs File Reader 3.6</text>
+        <text>XLogs File Reader 3.7</text>
     </item>
     <item name="$TemplateBuildDate" sign="true">
-        <datetime>20261110T081116,00+01</datetime>
+        <datetime>20261112T120618,00+01</datetime>
     </item>
     <item name="$comment" sign="true">
         <text>Rev 6.5</text>

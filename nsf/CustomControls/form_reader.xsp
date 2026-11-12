@@ -25,6 +25,14 @@ requestScope.xlogsContent = current == null ? "" : current.getHtml();
 			, &#160;
 			<xp:text escape="true" id="computedField6" value="#{javascript:dk.xpages.utils.NotesStrings.readableFileSize( viewScope.currentFile.getSize());}">
 			</xp:text>
+		<xp:link id="downloadZip" styleClass="fileZipDownload downloadLink" escape="true"
+			rendered="#{javascript:viewScope.filelist.isZipSupported() &amp;&amp; viewScope.filelist.getSelectedCount() > 0}"
+			text="#{javascript:'Download ' + viewScope.filelist.getSelectedCount() + ' selected as ZIP'}">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action><![CDATA[#{javascript:viewScope.filelist.downloadSelected();}]]></xp:this.action>
+				<xp:this.script><![CDATA[XSP.allowSubmit()]]></xp:this.script>
+			</xp:eventHandler>
+		</xp:link>
 		</h2>
 		
 		<div class="lotusSectionBody">

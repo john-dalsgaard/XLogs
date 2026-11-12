@@ -68,6 +68,15 @@
 					<filename encoding="UTF-8">[data]/domino/workspace/.metadata/.log</filename>
 				</action>
 			</item>
+			<item name="Tika" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/ndtika*</filename>
+					<filters>
+						<filter applyto="line" color="darkred" name="Errors">(?i)\b(error|fatal)\b</filter>
+						<filter applyto="line" background="yellow" name="Warnings">(?i)\bwarn(ing)?\b</filter>
+					</filters>
+				</action>
+			</item>
 			<item name="Trace" restricted="true">
 				<action type="filereader" filetype="xml">
 					<filename>[data]/domino/workspace/logs/trace-log-*.xml</filename>
@@ -186,6 +195,73 @@
 		</item>
 		<item name="Ext" id="ext" link="#">
 			<action type="link" url="Ext.xsp?tab=ext" />
+		</item>
+		<item name="Diagnostics" id="diagnostics" page="Reader.xsp" hideWhenEmpty="true">
+			<action type="link" url="Reader.xsp?tab=diagnostics" />
+			<item name="All support files" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/nsd_*.log</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/NSD_DTRACE_*.OUT</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/SEMDEBUG.TXT</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/SEMDEBUG_*.TXT</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/javacore*.txt</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/console*.log</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/sysinfo*.log</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/configall_*.dxl</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/configspecific_*.dxl</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/serverdoc_*.dxl</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/logasio_*.log</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/kill_*.log</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/ENVDEBUG.TXT</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/ADC_PROCESSES.txt</filename>
+				</action>
+			</item>
+			<item name="NSD" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/nsd_*.log</filename>
+				</action>
+			</item>
+			<item name="NSD trace" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/NSD_DTRACE_*.OUT</filename>
+				</action>
+			</item>
+			<item name="Semaphores" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/SEMDEBUG.TXT</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/SEMDEBUG_*.TXT</filename>
+				</action>
+			</item>
+			<item name="Java dumps" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/javacore*.txt</filename>
+				</action>
+			</item>
+			<item name="Console" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/console*.log</filename>
+				</action>
+			</item>
+			<item name="System info" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/sysinfo*.log</filename>
+				</action>
+			</item>
+			<item name="Configuration snapshots" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/configall_*.dxl</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/configspecific_*.dxl</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/serverdoc_*.dxl</filename>
+				</action>
+			</item>
+			<item name="Additional diagnostics" restricted="true">
+				<action type="filereader" filetype="text">
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/logasio_*.log</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/kill_*.log</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/ENVDEBUG.TXT</filename>
+					<filename>[data]/IBM_TECHNICAL_SUPPORT/ADC_PROCESSES.txt</filename>
+				</action>
+			</item>
 		</item>
 		<item name="About" page="About.xsp">
 			<action type="link" url="About.xsp?tab=about" />

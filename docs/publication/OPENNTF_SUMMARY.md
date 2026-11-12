@@ -7,6 +7,8 @@ XLogs is a browser-based log viewer and troubleshooting tool for HCL Domino and 
 - Read console and XPages logs, log.nsf, OSGi startup logs, and XPages XML error and trace logs.
 - Inspect design update logs, HTTP request logs and other configured text files.
 - View Traveler error, activity, usage, audit and system dump logs when available, and download archived log files.
+- Browse Diagnostics files including NSD, NSD trace, semaphore logs, Java dumps and configuration snapshots; combine selected files in one ZIP download.
+- Read Tika logs, including files without an extension.
 - Browse files, download them, highlight important messages and hide selected categories using configurable filters.
 - Navigate text logs with selectable page sizes from 250 to 50,000 lines. Filter choices are retained during navigation.
 - Inspect server configuration files such as notes.ini, server-wide xsp.properties, java.policy, java.pol and rcpinstall.properties, when present and accessible.

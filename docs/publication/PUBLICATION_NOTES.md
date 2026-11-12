@@ -1,30 +1,36 @@
-# Publication preparation — 3.6
+# Publication preparation — 3.7
 
-These are editorial drafts, not a record of publication. No OpenNTF fields or GitHub releases have been changed.
+Prepared locally; no GitHub or OpenNTF publication has been performed.
 
-## OpenNTF fields
+## Assets and text
 
-| Field | Proposed value |
-| --- | --- |
-| Display name, if renaming is available | XLogs — formerly XPages Log File Reader |
-| Summary | OPENNTF_SUMMARY.md |
-| Release name | XLogs 3.6 |
-| Version | 3.6 |
-| New features / release description | RELEASE_3.6.md |
-| Source Control | https://github.com/john-dalsgaard/XLogs |
-| Defects / issue tracker | https://github.com/john-dalsgaard/XLogs/issues |
-| Documentation | https://github.com/john-dalsgaard/XLogs/blob/master/docs/INSTALLATION.md |
+- Installation download for both services: `dist/XLogs-3.7.zip`.
+- Checksum: `dist/XLogs-3.7.zip.sha256`.
+- Release title: `XLogs 3.7`; version: `3.7`; Git tag: `v3.7`.
+- Release description: `docs/publication/RELEASE_3.7.md`.
+- Optional updated project summary: `docs/publication/OPENNTF_SUMMARY.md`.
+- Packaging provenance and template hash: `dist/PACKAGE_INFO.txt`.
 
-Keep the existing OpenNTF project/history and the original demo link. If the display name changes, verify that the old project URL still resolves. Add current screenshots showing the reader and About/debug panel. Keep the original repository as a historical reference in the documentation.
+The ZIP contains the supplied `dist/xlogs.ntf`, README.txt, RELEASE_NOTES.md, the license and attribution files, and documentation. The NTF is included unchanged. Its internal design, ACL and documents have not been independently inspected. It is supplied by the maintainer as the release template. GitHub's automatic source archives are not the installation package. Keep the binary in release assets; dist is ignored by Git.
 
-## Download package
+## GitHub
 
-Prepared local asset: `dist/XLogs-3.6.zip`, containing the supplied `xlogs.ntf` template, a short README.txt with deployment instructions, RELEASE_NOTES.md, LICENSE.txt, NOTICE.txt, both MIT license files and the docs directory. Do not use GitHub's automatic Source code ZIP as the installation download.
+1. Review and commit the intended source and documentation changes, then push that commit to GitHub. Keep the release tag on the source used to build the supplied NTF.
+2. Open https://github.com/john-dalsgaard/XLogs/releases/new.
+3. Choose/create tag `v3.7` at that source commit and use title `XLogs 3.7`.
+4. Paste RELEASE_3.7.md into the release description.
+5. Attach XLogs-3.7.zip and XLogs-3.7.zip.sha256.
+6. Review the draft, then publish the release. Download the published ZIP and compare its SHA-256 with the local checksum.
 
-Use a clean release template with the 3.6 design and intended ACL defaults, retaining required help/design content but excluding personal deployment data and saved debug settings. Package a closed, consistent template copy. Debug must be off by default. The recipient signs the design for their environment.
+GitHub instructions: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
 
-The database binary is a release asset; keep the editable on-disk project in Git. Upload the same ZIP to OpenNTF and to a GitHub release tagged `v3.6`, pointing at the exact source commit used to build it. Include the ZIP's SHA-256 in the release description or as a checksum file.
+## OpenNTF
 
-The supplied working template is `xlogs.ntf` in the project root. Root-level NSF/NTF files and generated `dist/` packages are ignored by Git. The binary has been packaged unchanged; its internal design, ACL and documents have not been inspected by the packaging script. Before publishing, confirm the template contents. The maintainer has confirmed testing and operation on Domino 9.0.1 FP10 and selected versions through Domino 14.5.1 FP1; this statement is included in the README, installation guide, summary and release description. It does not claim testing of every intermediate release.
+1. Sign in with the project-owner/committer account and open the existing XPages Log File Reader / XLogs project. Preserve its project history.
+2. Use the project's release-creation action. Exact labels depend on the authenticated OpenNTF interface.
+3. Set release name `XLogs 3.7` and version `3.7`, and copy the contents of RELEASE_3.7.md into the release description. Adapt Markdown to the editor if needed.
+4. Attach the same XLogs-3.7.zip used on GitHub; add the checksum file if the form supports it, otherwise include its hash in the description.
+5. Optionally update the project summary from OPENNTF_SUMMARY.md. Keep source and issue links pointing to https://github.com/john-dalsgaard/XLogs and its /issues page.
+6. Save/publish, then verify the release download and version. The authenticated release form has not been inspected for this preparation.
 
-The existing third-party attribution follow-ups in docs/THIRD_PARTY.md remain relevant to publication. This drafting step does not resolve them.
+Project: https://www.openntf.org/main.nsf/project.xsp?r=project/XPages%20Log%20File%20Reader

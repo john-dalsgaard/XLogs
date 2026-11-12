@@ -30,6 +30,12 @@ public class FileAction implements IAction, Serializable {
 
 	@Override
 	public void execute() {
+		FileList previous = (FileList) XSPUtils.getViewScope().get("filelist");
+		if (previous != filelist) {
+			if (previous != null) previous.clearSelection();
+			filelist.clearSelection();
+			XSPUtils.getViewScope().put("resetFileListPaging", Boolean.TRUE);
+		}
 		XSPUtils.getViewScope().put("filelist", filelist);
 		XSPUtils.getViewScope().put("currentFile", filelist.getCurrent());
 		XSPUtils.getViewScope().put("currentMenu", getParent());

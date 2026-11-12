@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:
+if (viewScope.resetFileListPaging == true) {
+	getComponent("files").setFirst(0);
+	viewScope.remove("resetFileListPaging");
+}
+}]]></xp:this.beforeRenderResponse>
+
 	<xp:this.resources>
 		<xp:dojoModule name="dijit.Tooltip"></xp:dojoModule>
 	</xp:this.resources>
@@ -17,13 +24,20 @@
 		&#160;files
 	</xp:panel>
 
+	<xp:button id="syncZipSelection" value="Update selection" style="display:none;">
+		<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
+			<xp:this.action><![CDATA[#{javascript:viewScope.filelist.updateSelection();}]]></xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
 	<div class="fileSelector">
 		<xp:pager partialRefresh="false" id="filesPager" for="files" layout="Previous Next"></xp:pager>
 		<ul>
 			<xp:repeat id="files" rows="5" var="file" removeRepeat="true">
 				<xp:this.value><![CDATA[#{javascript:viewScope.filelist.getFiles();}]]></xp:this.value>
-				<li>
-					<xp:link escape="true" id="tip">
+				<li style="display:flex;align-items:center;">
+					<xp:text escape="false" disableTheme="true" rendered="#{viewScope.filelist.zipSupported}"
+						value="#{javascript:viewScope.filelist.getSelectionHtml(file, getClientId('syncZipSelection'))}" />
+					<xp:link escape="true" id="tip" style="display:block;flex:1;min-width:0;">
 						<xp:this.styleClass><![CDATA[#{javascript:if( viewScope.currentFile==file) {"current"}}]]></xp:this.styleClass>
 						<xp:text escape="true" id="computedField3" styleClass="fileSelectorDate" value="#{javascript:dk.xpages.utils.XSPUtils.formatServerDate(file.getDate());}">
 						</xp:text>

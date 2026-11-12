@@ -51,6 +51,22 @@ public class Download implements Serializable {
 		this.contenttype = getContenttype(file.getName());
 	}
 
+	public void save(File file, String filename, String mimeType) throws IOException {
+		XspHttpServletResponse response = (XspHttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+		response.setContentType(mimeType);
+		response.setHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		java.io.InputStream input = new java.io.FileInputStream(file);
+		try {
+			OutputStream output = response.getOutputStream();
+			byte[] buffer = new byte[65536];
+			int count;
+			while ((count = input.read(buffer)) != -1) output.write(buffer, 0, count);
+			output.flush();
+		} finally { input.close(); }
+		FacesContext.getCurrentInstance().responseComplete();
+	}
+
 	public void save(final byte[] data, String filename) throws IOException {
 		XspHttpServletResponse response = (XspHttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
 

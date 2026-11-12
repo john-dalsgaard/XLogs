@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.7 — 2026-11-12
+
+- Keep ZIP checkboxes inline with file rows, show the selected count in a conditional download link in the Current file heading, and clear selection when changing categories. Move Tika after OSGi startup log and Diagnostics after Ext.
+
+- Reset file-list paging to the first page when changing categories.
+- Add Tika logs under Logs and a Diagnostics tab with combined and categorized support files.
+- Add selection across file-list pages and ZIP download of complete original text files, streamed through a temporary archive.
+
 This summary is based on the local commit history. Version headings describe development history, not published GitHub releases. The local history begins with a v3.4 source import; earlier history is in the original repository.
 
 ## 3.6 — current development

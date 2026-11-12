@@ -48,3 +48,13 @@ Filters use Java regular expressions. `applyto="line"` styles the entire matchin
 Text pages offer 250, 1,000 (default), 5,000, 10,000 or 50,000 lines. The legacy `MaxTextLines` configuration remains in config.xml but is not used as a hard text-read limit by the current TextFile implementation. Paging limits rendered lines; the selected file snapshot is still read into memory, so it is not a streaming guarantee for arbitrarily large files.
 
 `MaxLogFileDocs` currently limits log.nsf reads to 5,000 documents. See the actual `<limits>` entries in config.xml when changing deployment defaults.
+
+## Tika and support diagnostics
+
+Logs → Tika reads `IBM_TECHNICAL_SUPPORT/ndtika*`, including files without an extension, and highlights WARN/WARNING and ERROR/FATAL lines.
+
+Diagnostics provides NSD logs, NSD DTRACE output, SEMDEBUG, Java dumps, console logs, sysinfo, configuration DXL snapshots and additional diagnostic logs (logasio, kill, ENVDEBUG and ADC_PROCESSES). All support files combines these groups so files from different categories can be selected together. Individual groups remain available for browsing. Entries require the existing restricted-menu access checks and appear only when matching files exist. Patterns are case sensitive; customize config.xml for different filename casing.
+
+In a file list with multiple text files, tick the checkbox on each file row. A link in the Current file heading, after the file size, shows “Download N selected as ZIP” when at least one file is selected; one selected file is also downloaded as ZIP. Selection survives paging within the same group and is cleared when switching categories. Switching categories also resets the file list to its first page. Use All support files to combine, for example, NSD, console and SEMDEBUG. ZIP includes complete original file bytes, independent of content filters and displayed page limits. Files are compressed into a temporary server file and streamed to the browser; the temporary file is removed afterwards. Individual download links remain available, including for groups containing only one file.
+
+After synchronizing and building in Designer, verify Tika highlighting, Diagnostics visibility and restricted access, individual downloads, and ZIP selection across file-list pages. Extract a ZIP containing NSD, console and SEMDEBUG and compare it with the source files. Also verify empty selection and a file removed after the list was loaded.

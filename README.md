@@ -11,7 +11,8 @@ XLogs continues **XPages Log File Reader**, originally developed by **Jakob Majk
 
 ## Features
 
-- Read XPages and console logs, log.nsf, OSGi startup logs, and XPages XML error and trace logs.
+- Read XPages, console and Tika logs, log.nsf, OSGi startup logs, and XPages XML error and trace logs.
+- Browse Diagnostics support files, including NSD, semaphore logs, Java dumps and configuration snapshots; select multiple files for one ZIP download.
 - Inspect design update and HTTP request logs when available.
 - Read Traveler logs when `NTS_LOG_ROOT_DIR` is configured; the Traveler menu is hidden when no matching entries are available.
 - Inspect configuration files such as notes.ini, xsp.properties and Java policy files.

@@ -51,13 +51,16 @@
 	padding:0;
 }
 .fileSelector li {
-	display:block;
+	display:flex;
+	align-items:center;
 	margin:0;
 	padding:0;
 }
 
 .fileSelector li a {
 	display:block;
+	flex:1;
+	min-width:0;
 	padding:3px 6px;
 	overflow-wrap:break-word;
 }
@@ -350,3 +353,8 @@ padding-right:13px;
     .xlogsApp .xlogsAboutWithDebug { grid-template-columns:minmax(0, 1fr); }
     .xlogsApp .xlogsDebugCard { grid-row:1; }
 }
+
+/* Keep ZIP selection in the compact file row and summary. */
+.fileZipSelection { flex:0 0 auto; margin:0 4px 0 0; }
+.fileZipSelection input { margin:0; vertical-align:middle; }
+.fileZipDownload { margin-left:15px; white-space:nowrap; }
